@@ -103,6 +103,24 @@ function randomApple(squares) {
     squares[appleIndex].classList.add("apple");
 }
 
+function control(event) {
+    if ( event.key === 39) {
+        direction = 1; //right
+    }
+    else if (event.key === 38)
+    {
+        direction = -width //if user press up arrow, snake will go ten divs up
+    }
+    else if (event.key === 37) 
+    {
+        direction = -1; //left, snake will got left one div
+    }
+    else if (event.key === 40)
+    {
+        direction = +width; // down the snake head will instantly appear 10 divs below from the current
+    }
+}
+
 
 
 /*const gameBoard = document.getElementById("game-board");
