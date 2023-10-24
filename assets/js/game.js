@@ -65,6 +65,22 @@ function moveSnake(squares) {
     squares[currentSnake[0]].classList.add("snake");
 }
 
+function checkForHits(squares) {
+   if (
+    (currentSnake[0] + width >= width * width && directions === width) ||
+    (currentSnake[0] % width === width -1 && directions === 1) ||
+    (currentSnake[0] % width === 0 && directions === -1) ||
+    (currentSnake[0] - width <= 0 && directions === -width) ||
+    squares[currentSnake[0] + direction].classList.contains("snake")
+    ){
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 
 
 /*const gameBoard = document.getElementById("game-board");
