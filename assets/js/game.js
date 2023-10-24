@@ -81,6 +81,28 @@ function checkForHits(squares) {
     }
 }
 
+function eatApple(squares, tail){
+    if (square[currentSnake[0]].class.contains("apple")) {
+
+        squares[currentSnake[0]].classList.remove("apple");
+        squares[tail].classList.add("snake");
+        currentSnake.push(tail);
+        randomApple(squares);
+        score++;
+        ScoreDisplay.textContent = score;
+        clearInterval(interval);
+        interval = setInterval(moveOutcome, intervalTime);
+    }
+}
+
+function randomApple(squares) {
+    do {
+        appleIndex = Math.floor(Math.random() * squares.length);
+
+    }while (square[appleIndex].classList.contains("snake"));
+    squares[appleIndex].classList.add("apple");
+}
+
 
 
 /*const gameBoard = document.getElementById("game-board");
