@@ -1,15 +1,24 @@
 
 let Start = document.getElementById('start-btn');
-let questionBox =  document.getElementById('question-box')
+let questionBox =  document.getElementById('question-box');
+let shuffeledQuestions, currentQuestionIndex;
  
- Start.addEventListener('click', function() {
+ /*Start.addEventListener('click', function() {
 
     this.style.display = "none";
     
     questionBox.classList.remove('hide');
-  });
+  });*/
 
-  function startGame(){}
+  Start.addEventListener("click", startGame);
+
+  function startGame(){
+    Start.classList.ass("hide");
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    questionBox.classList.remove("hide");
+    nextCard();
+  }
   function nextCard(){}
   function selectedAnswer(){}
   
