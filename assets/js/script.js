@@ -29,7 +29,7 @@ let shuffleQuestions, currentQuestionIndex;
 
   function nextCard(){
     resetState();
-    if (currentQuestionIndex < question.length) {
+    if (currentQuestionIndex < questions.length) {
         showQuestion(shuffleQuestions[currentQuestionIndex]);
     }
     else
@@ -40,13 +40,14 @@ let shuffleQuestions, currentQuestionIndex;
 
 function showQuestion(question){
     questionCard.innerText = question.question;
-    answerButtons.innerHTML = "";
 
     question.answers.forEach((answer, index) => {
         const button = document.createElement("button");
 
         button.classList.add("btn");
         button.innerText = answer;
+
+        button.dataset.answer = index;
 
         button.addEventListener("click", () => checkAnswer(index));
 
@@ -55,18 +56,18 @@ function showQuestion(question){
   }
 
   function resetState(){
-    next.classList.add("hide");
+
     while ( answerButtons.firstChild) {
-        answerButtons.removeChild;
-        (answerButtons.firstChild)
+        answerButtons.removeChild(answerButtons.firstChild);
     }
+    next.classList.add("hide");
   }
 
   function checkAnswer(selectedIndex) {
     const correctIndex = questions[currentQuestionIndex].correctAnswer;
 
     if (selectedIndex === correctIndex) {
-        
+        //Need adjustments here!!!
         nextCard()++;
 
         answerButtons[currentQuestionIndex].style.color = "lightgreen";
