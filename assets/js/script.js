@@ -65,22 +65,33 @@ function showQuestion(question){
   }
 
   function checkAnswer(selectedIndex) {
+    
     const correctIndex = questions[currentQuestionIndex].correctAnswer;
-
+    const buttons = answerButtons.getElementsByTagName("button");
+  
     if (selectedIndex === correctIndex) {
-
-        results.innerHTML += "Correct!<br>";
-    }
-    else
+      buttons[selectedIndex].style.backgroundColor = "green";
+    } 
+    else if (selectedIndex !== correctIndex)
     {
-        results.innerHTML += "Wrong!<br>";
+      buttons[selectedIndex].style.backgroundColor = "red";
     }
-    currentQuestionIndex++;
-    nextCard();
-
+  
+    for (const button of buttons) {
+      button.disabled = true;
+    }
+  
+    setTimeout(() => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        nextCard();
+      } else {
+        showResult();
+      }
+    }, 1000);
   }
 
-  function showResult(){
+function showResult(){
     questionCard.innerText = "Quiz Finished";
     resetState();
   }
@@ -95,6 +106,7 @@ function showQuestion(question){
         "Video editing"
     ],
     correctAnswer: 2,
+    wrongAnswer: [1, 0, 3]
 },
 {
     question: "Which of the following is not a JavaScript data type?",
@@ -104,7 +116,8 @@ function showQuestion(question){
         "Boolean",
         "Float"
     ],
-    correctAnswer: 4,
+    correctAnswer: 3,
+    wrongAnswer: [0, 2, 1]
 },
 {
     question: "What does the 'DOM' stand for in JavaScript?",
@@ -114,7 +127,8 @@ function showQuestion(question){
         "Document Order Model",
         "Document of Manipulation"
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
 },
 {
     question: "How do you define a variable in JavaScript with a global Scope?",
@@ -124,7 +138,8 @@ function showQuestion(question){
         "var",
         "int"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
+    wrongAnswer: [0, 2, 3]
 },
 {
     question: "Which of the following JavaScript frameworks is used for building user interfaces?",
@@ -134,7 +149,8 @@ function showQuestion(question){
         "Express",
         "React"
     ],
-    correctAnswer: 4,
+    correctAnswer: 3,
+    wrongAnswer: [1, 2, 0]
 },
 {
     question: "What is the purpose of the 'if' statement in JavaScript?",
@@ -144,7 +160,8 @@ function showQuestion(question){
         "Make decisions in your code",
         "Create a class"
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
 },
 {
     question: "What method is used to add a new element to the end of an array in JavaScript?",
@@ -154,7 +171,8 @@ function showQuestion(question){
         "insert()",
         "add()"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
+    wrongAnswer: [0, 2, 3]
 },
 {
     question: "Which JavaScript function is used to perform an action after a specific time interval?",
@@ -164,7 +182,8 @@ function showQuestion(question){
         "setInterval()",
         "wait"
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
+    wrongAnswer: [0, 1, 3]
 },
 {
     question: "What is the correct way to write a comment in JavaScript?",
@@ -174,7 +193,8 @@ function showQuestion(question){
         "++This is a comment++",
         "**This is a comment**"
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
 },
     {
         question: "What is the purpose of the 'this' keyword in JavaScript?",
@@ -184,6 +204,7 @@ function showQuestion(question){
             "Refers to the current object",
             "Refers to a global variable"
         ],
-        correctAnswer: 3,
+        correctAnswer: 2,
+        wrongAnswer: [0, 1, 3]
 }
 ];
