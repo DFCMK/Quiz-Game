@@ -4,7 +4,7 @@ let next = document.getElementById("next-btn");
 let questionBox =  document.getElementById("question-box");
 let questionCard = document.getElementById("question");
 let answerButtons = document.getElementById("answer-btn");
-let results = document.getElementById("reuslt");
+let results = document.getElementById("reuslts");
 
 let shuffleQuestions, currentQuestionIndex;
 
