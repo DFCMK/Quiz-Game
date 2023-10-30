@@ -52,7 +52,7 @@ function showQuestion(question){
 
         button.addEventListener("click", () => checkAnswer(index));
 
-        answerButtons.appendChild("button");
+        answerButtons.appendChild(button);
     });
   }
 
@@ -61,7 +61,7 @@ function showQuestion(question){
     while ( answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
-    next.classList.add("hide");
+    next.classList.remove("hide");
   }
 
   function checkAnswer(selectedIndex) {
