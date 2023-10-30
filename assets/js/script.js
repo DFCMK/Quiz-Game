@@ -79,7 +79,10 @@ function showQuestion(question){
 
   }
 
-  function selectedAnswer(){}
+  function showResult(){
+    questionCard.innerText = "Quiz Finished";
+    resetState();
+  }
   
   let questions = [
     {
