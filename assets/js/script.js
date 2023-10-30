@@ -34,12 +34,13 @@ let shuffleQuestions, currentQuestionIndex;
     }
     else
     {
-        showResults();
+        showResult();
     }
 }
 
 function showQuestion(question){
     questionCard.innerText = question.question;
+    answerButtons.innerHTML = "";
 
     question.answers.forEach((answer, index) => {
         const button = document.createElement("button");
