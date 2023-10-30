@@ -67,16 +67,15 @@ function showQuestion(question){
     const correctIndex = questions[currentQuestionIndex].correctAnswer;
 
     if (selectedIndex === correctIndex) {
-        //Need adjustments here!!!
-        nextCard()++;
 
-        answerButtons[currentQuestionIndex].style.color = "lightgreen";
+        results.innerHTML += "Correct!<br>";
     }
     else
     {
-        answerButtons[currentQuestionIndex].style.color = "red";
+        results.innerHTML += "Wrong!<br>";
     }
-    results[currentQuestionIndex].style.color = "red";
+    currentQuestionIndex++;
+    nextCard();
 
   }
 
