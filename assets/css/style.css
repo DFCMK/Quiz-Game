@@ -15,13 +15,6 @@ body {
     margin: 0;
     padding: 0;
 }
-body.correct {
-    --hue: var(--hue-correct);
-}
-
-body.wrong {
-    --hue: var(--hue-wrong);
-}
 
 #question-box {
     background-color: #fff;
@@ -30,6 +23,12 @@ body.wrong {
     border-radius: 5px;
     border: 1px solid black;
     box-shadow: 0 0 10px 1px;
+}
+
+#question {
+    padding: 10px 5px;
+    margin: 5px 0px;
+    font-weight: bold;
 }
 
 .btn-grid { /*Web Dev Simplified Tutorial*/
@@ -46,21 +45,13 @@ body.wrong {
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue),100%, 30%);
-    background-color: hsl(var(--hue),100%, 50%);
+    background-color: hsl(var(--hue),100%, 70%);
     border-radius: 5px;
     padding: 10px;
-    color: white;
+    color: #000;
     outline: none;
+    font-weight: bold;
 
-}
-
-.btn.correct {
-    --hue: var(--hue-correct);
-    color: black; 
-}
-
-.btn.wrong {
-    --hue: var(--hue-wrong);
 }
 
 #start-btn, #next-btn {
@@ -81,6 +72,16 @@ body.wrong {
     display: flex;
     justify-content: space-around;
     text-align: center;
+}
+
+#score {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
 }
 
 .hide {
