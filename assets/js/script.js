@@ -8,6 +8,9 @@ let results = document.getElementById("results");
 let score = 0;
 let incorrect = 0;
 let gameStarted = false;
+let replayMenu = document.getElementById("replay-menu");
+let PlayAgain = document.getElementById("play-again-btn");
+let Quit = document.getElementById("quit-btn");
 
 let shuffleQuestions, currentQuestionIndex;
 
@@ -21,8 +24,10 @@ Start.addEventListener("click", function() {
     document.querySelector(".score-area").classList.remove("hide");
   });
 
-  next.addEventListener("click", nextCard);
+  next.addEventListener("click", nextCard); //initially hide the replay menu
 
+  /*replayMenu.style.display = "none";*/
+  
   function startGame(){
     Start.classList.add("hide");
     shuffleQuestions = questions.sort(() => Math.random() - 0.5);
@@ -101,22 +106,36 @@ function showQuestion(question){
   }
 
 function showResult(){
-    questionCard.innerText = "Quiz Finished";
+    questionCard.innerText = "Quiz Finished!";
     resetState();
+    startGame();
+    reset(score, incorrect);
   }
+
   function reset() {
     incorrect = 0;
     score = 0;
     document.getElementById("score").textContent = score;
     document.getElementById("incorrect").textContent = incorrect;
   }
+
   function gameOver() {
     if(incorrect === 3) {
         alert("Game Over, you were three times wrong!");
         resetState();
         reset(incorrect, score);
+        /*replayMenu.style.display = "block";*/
     }
   }
+
+  /*document.getElementById("play-again-btn").addEventListener("click", () => {
+    replayMenu.style.display = "none";
+  });
+
+  document.getElementById("play-again-btn").addEventListener("click", () => {
+    replayMenu.style.display = "none";
+  });*/
+
 
   let questions = [
     {
