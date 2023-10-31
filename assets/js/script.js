@@ -83,6 +83,7 @@ function showQuestion(question){
       buttons[selectedIndex].style.backgroundColor = "red";
       incorrect++;
       document.getElementById("incorrect").textContent = incorrect;
+      gameOver();
     }
   
     for (const button of buttons) {
@@ -103,7 +104,20 @@ function showResult(){
     questionCard.innerText = "Quiz Finished";
     resetState();
   }
-  
+  function reset() {
+    incorrect = 0;
+    score = 0;
+    document.getElementById("score").textContent = score;
+    document.getElementById("incorrect").textContent = incorrect;
+  }
+  function gameOver() {
+    if(incorrect === 3) {
+        alert("Game Over, you were three times wrong!");
+        resetState();
+        reset(incorrect, score);
+    }
+  }
+
   let questions = [
     {
     question: "What is JavaScript primarily used for?",
