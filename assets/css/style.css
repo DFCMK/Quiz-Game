@@ -19,7 +19,6 @@ body {
 #question-box {
     background-color: #fff;
     width: 880px;
-    max-width: 80%;
     border-radius: 5px;
     border: 1px solid black;
     box-shadow: 0 0 10px 1px;
