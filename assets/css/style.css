@@ -114,3 +114,17 @@ body {
 .hide {
     display: none;
 }
+
+@media screen and (min-width: 325px) {
+    #question-box {
+        width: 100vw;
+        height: auto;
+    }
+
+}
+
+@media (orientation: landscape) {
+    #question-box {
+        width: 880px;
+    }
+}
