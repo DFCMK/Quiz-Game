@@ -5,6 +5,9 @@ let questionBox =  document.getElementById("question-box");
 let questionCard = document.getElementById("question");
 let answerButtons = document.getElementById("answer-btn");
 let results = document.getElementById("results");
+let score = 0;
+let incorrect = 0;
+let gameStarted = false;
 
 let shuffleQuestions, currentQuestionIndex;
 
@@ -16,7 +19,16 @@ let shuffleQuestions, currentQuestionIndex;
     questionBox.classList.remove('hide');
   });*/
 
-  Start.addEventListener("click", startGame);
+  Start.addEventListener("click", function() {
+    startGame();
+    gameStarted = true;
+    score = 0;
+    incorrect = 0;
+    document.getElementById("score").textContent = score;
+    document.getElementById("incorrect").textContent = incorrect;
+    document.querySelector(".score-area").classList.remove("hide");
+  });
+  
   next.addEventListener("click", nextCard);
 
   function startGame(){
@@ -71,10 +83,14 @@ function showQuestion(question){
   
     if (selectedIndex === correctIndex) {
       buttons[selectedIndex].style.backgroundColor = "green";
+      score++;
+      document.getElementById("score").textContent = score;
     } 
     else if (selectedIndex !== correctIndex)
     {
       buttons[selectedIndex].style.backgroundColor = "red";
+      incorrect++;
+      document.getElementById("incorrect").textContent = incorrect;
     }
   
     for (const button of buttons) {

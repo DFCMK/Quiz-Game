@@ -77,6 +77,12 @@ body.wrong {
     align-items: center;
 }
 
+.score-area {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
 .hide {
     display: none;
 }
