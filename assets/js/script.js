@@ -11,15 +11,7 @@ let gameStarted = false;
 
 let shuffleQuestions, currentQuestionIndex;
 
- 
- /*Start.addEventListener('click', function() {
-
-    this.style.display = "none";
-    
-    questionBox.classList.remove('hide');
-  });*/
-
-  Start.addEventListener("click", function() {
+Start.addEventListener("click", function() {
     startGame();
     gameStarted = true;
     score = 0;
@@ -28,7 +20,7 @@ let shuffleQuestions, currentQuestionIndex;
     document.getElementById("incorrect").textContent = incorrect;
     document.querySelector(".score-area").classList.remove("hide");
   });
-  
+
   next.addEventListener("click", nextCard);
 
   function startGame(){
