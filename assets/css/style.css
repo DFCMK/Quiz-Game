@@ -101,29 +101,32 @@ h2 {
 
 #replay-menu {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: auto;
-    transform: translate(-64%, -50%);
+    top: 27%;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
     background-color: #fff;
     padding: 20px;
     z-index: 1000;
     display: none;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 20%);
 }
 
 .game-over-msg {
     font-weight: bold;
     text-align: center;
+    margin-top: 1rem;
 }
 
 #play-again-btn {
     padding: 20px;
-    margin-left: 16rem;
+    margin: 1rem 0;
 }
 
 #quit-btn {
     padding: 20px;
+    margin: 1rem 0;
 }
 
 .hide {
