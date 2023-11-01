@@ -104,7 +104,6 @@ h2 {
     width: 100vmin;
     height: 100vmin;
     background-color: #fff;
-    padding: 20px;
     z-index: 1000;
     display: none;
     text-align: center;
@@ -115,6 +114,7 @@ h2 {
     font-weight: bold;
     text-align: center;
     margin-top: 1rem;
+    color: #fff;
 }
 
 #play-again-btn {
@@ -136,7 +136,7 @@ h2 {
         width: 100vw;
         height: auto;
     }
-
+   
 }
 
 @media (orientation: landscape) {
