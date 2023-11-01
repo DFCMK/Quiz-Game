@@ -10,7 +10,7 @@ let incorrect = 0;
 let gameStarted = false;
 let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
-let Quit = document.getElementById("quit-btn");
+/*let Quit = document.getElementById("quit-btn");*/
 
 let shuffleQuestions, currentQuestionIndex;
 
@@ -133,9 +133,9 @@ function showResult(){
     replayMenu.style.display = "none";
   });
 
-  document.getElementById("quit-btn").addEventListener("click", () => {
+  /*document.getElementById("quit-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
-  });
+  });*/
 
 
   let questions = [
