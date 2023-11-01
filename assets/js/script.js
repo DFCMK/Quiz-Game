@@ -10,6 +10,7 @@ let incorrect = 0;
 let gameStarted = false;
 let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
+let title = document.getElementById("title");
 /*let Quit = document.getElementById("quit-btn");*/
 
 let shuffleQuestions, currentQuestionIndex;
@@ -126,6 +127,7 @@ function showResult(){
         resetState();
         reset(incorrect, score);
         replayMenu.style.display = "block"; //show replay menu
+        title.classList.add("hide");
     }
   }
 
