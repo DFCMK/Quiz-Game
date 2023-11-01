@@ -22,11 +22,12 @@ Start.addEventListener("click", function() {
     document.getElementById("score").textContent = score;
     document.getElementById("incorrect").textContent = incorrect;
     document.querySelector(".score-area").classList.remove("hide");
+    document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
   });
 
   next.addEventListener("click", nextCard); //initially hide the replay menu
 
-  /*replayMenu.style.display = "none";*/
+  replayMenu.style.display = "none";
   
   function startGame(){
     Start.classList.add("hide");
@@ -124,17 +125,17 @@ function showResult(){
         alert("Game Over, you were three times wrong!");
         resetState();
         reset(incorrect, score);
-        /*replayMenu.style.display = "block";*/
+        replayMenu.style.display = "block"; //show replay menu
     }
   }
 
-  /*document.getElementById("play-again-btn").addEventListener("click", () => {
+  document.getElementById("play-again-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
   });
 
-  document.getElementById("play-again-btn").addEventListener("click", () => {
+  document.getElementById("quit-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
-  });*/
+  });
 
 
   let questions = [
