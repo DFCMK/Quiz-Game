@@ -53,15 +53,13 @@ body {
 
 }
 
-#start-btn, #next-btn {
+#start-btn {
     background-color: hsl(var(--hue),100%, 70%);
     font-size: 1.4rem;
     font-weight: bold; 
     padding: 10px 20px; 
     border-radius: 5px;
-}
-
-#start-btn {
+    /*start button*/
     display: flex;
     justify-content: center;
     align-items: center;

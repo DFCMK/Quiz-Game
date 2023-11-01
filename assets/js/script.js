@@ -1,6 +1,6 @@
 
 let Start = document.getElementById("start-btn");
-let next = document.getElementById("next-btn");
+/*let next = document.getElementById("next-btn");*/
 let questionBox =  document.getElementById("question-box");
 let questionCard = document.getElementById("question");
 let answerButtons = document.getElementById("answer-btn");
@@ -25,7 +25,7 @@ Start.addEventListener("click", function() {
     document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
   });
 
-  next.addEventListener("click", nextCard); //initially hide the replay menu
+  /*next.addEventListener("click", nextCard);*/
 
   replayMenu.style.display = "none";
   
@@ -71,7 +71,7 @@ function showQuestion(question){
     while ( answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
-    next.classList.remove("hide");
+    /*next.classList.remove("hide");*/
   }
 
   function checkAnswer(selectedIndex) {
