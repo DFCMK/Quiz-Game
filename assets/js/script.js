@@ -1,4 +1,3 @@
-
 let Start = document.getElementById("start-btn");
 /*let next = document.getElementById("next-btn");*/
 let questionBox =  document.getElementById("question-box");
@@ -46,6 +45,7 @@ Start.addEventListener("click", function() {
     else
     {
         showResult();
+        startGame();
     }
 }
 
@@ -91,8 +91,8 @@ function showQuestion(question){
       incorrect++;
       document.getElementById("incorrect").textContent = incorrect;
       gameOver();
-    }
-  
+    } 
+    
     for (const button of buttons) {
       button.disabled = true;
     }
@@ -101,7 +101,8 @@ function showQuestion(question){
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
         nextCard();
-      } else {
+      } else 
+      {
         showResult();
       }
     }, 1000);
@@ -110,7 +111,6 @@ function showQuestion(question){
 function showResult(){
     questionCard.innerText = "Quiz Finished!";
     resetState();
-    startGame();
     reset(score, incorrect);
   }
 
@@ -133,12 +133,12 @@ function showResult(){
 
   document.getElementById("play-again-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
+    gameStarted = flase;
   });
 
   /*document.getElementById("quit-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
   });*/
-
 
   let questions = [
     {
