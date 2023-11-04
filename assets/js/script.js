@@ -72,6 +72,9 @@ function showQuestion(question){
 
         answerButtons.appendChild(button);
     });
+
+    //update the counter
+    document.getElementById("counter").textCounter = (currentQuestionIndex + 1) + "/" + question.lenght;
   }
 
   function resetState(){
