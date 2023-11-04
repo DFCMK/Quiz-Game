@@ -124,6 +124,7 @@ h2 {
 
 #counter {
     color: white;
+    display: none;
 }
 
 /*#quit-btn {

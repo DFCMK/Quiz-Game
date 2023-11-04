@@ -23,6 +23,7 @@ Start.addEventListener("click", function() {
     document.getElementById("incorrect").textContent = incorrect;
     document.querySelector(".score-area").classList.remove("hide");
     document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
+    document.getElementById("")
   });
 
   /*next.addEventListener("click", nextCard);*/
@@ -41,6 +42,7 @@ Start.addEventListener("click", function() {
 
     currentQuestionIndex = 0;
     questionBox.classList.remove("hide");
+    document.getElementById("counter").style.display = "block"; // show the counter
     nextCard();
   }
 
