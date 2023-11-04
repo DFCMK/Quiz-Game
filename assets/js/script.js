@@ -31,7 +31,14 @@ Start.addEventListener("click", function() {
   
   function startGame(){
     Start.classList.add("hide");
+
+    //Shuffle questions and select 15 questions
     shuffleQuestions = questions.sort(() => Math.random() - 0.5);
+    let selectedQuestions = shuffleQuestions.slice(0, 15);
+    
+    //use selected questions in the quiz
+    shuffleQuestions = selectedQuestions;
+
     currentQuestionIndex = 0;
     questionBox.classList.remove("hide");
     nextCard();
@@ -69,7 +76,7 @@ function showQuestion(question){
 
   function resetState(){
 
-    while ( answerButtons.firstChild) {
+    while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
     /*next.classList.remove("hide");*/
@@ -175,7 +182,7 @@ function showResult(){
     wrongAnswer: [1, 2, 3]
 },
 {
-    question: "How do you define a variable in JavaScript with a global Scope?",
+    question: "What is the correct way to define a variable in JavaScript with a global Scope?",
     answers: [
         "let",
         "const",
@@ -250,5 +257,236 @@ function showResult(){
         ],
         correctAnswer: 2,
         wrongAnswer: [0, 1, 3]
+},
+{
+  question: "Who invented Javascript?",
+  answers: [//Question 11
+      "Brenden Elch",
+      "Hakon Wium Lie",
+      "Tim Berners-Lee",
+      "Guido van Rossum"
+  ],
+  correctAnswer: 0,
+  wrongAnswer: [2, 1, 3]
+},
+{
+  question: "What does the getAttribute()?",
+  answers: [ //Question 12
+      "Checks if element node has a specified attribute?",
+      "sets the value of an attribute?",
+      "gets the value of an attribute?",
+      "removes an attribute from an element node?"
+  ],
+  correctAnswer: 2,
+  wrongAnswer: [0, 1, 3]
+},
+{
+  question: "What is the basic difference between JavaScript and Java?",
+  answers: [ //Question 13
+      "Functions are considered as fields",
+      "Java is a compiled language and runs in a Java Virtual Machine, while JavaScript is an interpreted language and is used for creating interactive websites.",
+      "Functions are values, and there is no hard distinction between methods and fields",
+      "Variables are specific"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [2, 0, 3]
+},
+{
+  question: "Which of the following scoping type does JavaScript use??",
+  answers: [ //Question 14
+      "Sequential",
+      "Segmental",
+      "Lexical",
+      "Literal"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
+},
+  {
+    question: "What is a closure in JavaScript?",
+    answers: [ //Question 15
+        "A function that has access to its own scope, the outer function's scope, and the global scope",
+        "A function that can be stored in a variable",
+        "A function that cannot access variables from other functions",
+        "A function that can only access its own variables"
+    ],
+    correctAnswer: 0,
+    wrongAnswer: [2, 1, 3] 
+  },
+  {
+    question: "Which of the following is the property that is triggered in response to JS errors?",
+    answers: [ //Question 16
+        "onclick",
+        "onerror",
+        "onmessage",
+        "onexeption"
+    ],
+    correctAnswer: 1,
+    wrongAnswer: [2, 1, 3]
+  },
+  {
+    question: "Which of the following is not a framework?",
+    answers: [ //Question 17
+        "JavaScript .NET",
+        "JavaScript",
+        "CocoaJS",
+        "JQuery"
+    ],
+    correctAnswer: 1,
+    wrongAnswer: [2, 1, 3]
+},
+{
+  question: "What is the purpose of the 'this' keyword in JavaScript?",
+  answers: [ //Question 18
+      "Refers to the previous function",
+      "Refers to a specific HTML element",
+      "Refers to the current object",
+      "Refers to a global variable"
+  ],
+  correctAnswer: 2,
+  wrongAnswer: [0, 1, 3]
+},
+{
+  question: "Why event handlers is needed in JS?",
+  answers: [ // Question 19
+      "Allows JavaScript code to alter the behaviour of windows",
+      "Adds innerHTML page to the code",
+      "Change the server location",
+      "Performs handling of exceptions and occurrences"
+  ],
+  correctAnswer: 0,
+  wrongAnswer: [2, 1, 3]
+},
+{
+  question: "What is the prototype represents in the following JavaScript code snippet?: function javascript() {}",
+  answers: [ // Question 20
+      "Not valid",
+      "Prototype of a function",
+      "Function javascript",
+      "A custom constructor"
+  ],
+  correctAnswer: 3,
+  wrongAnswer: [0, 1, 2]
+},
+{
+  question: "What will be the result or type of error if p is not defined in the following JavaScript code snippet?: console.log(p)",
+  answers: [ // Question 21
+      "Value not found Error",
+      "Reference Error",
+      "Null",
+      "Zero"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
+},
+{
+  question: "Which of the following methods/operation does javascript use instead of == and !=?",
+  answers: [ // Question 22
+      "JavaScript uses equalto()",
+      "JavaScript uses equals() and notequals() instead",
+      "JavaScript uses bitwise checking",
+      "javaScriptuses === and !== instead"
+  ],
+  correctAnswer: 3,
+  wrongAnswer: [0, 1, 2]
+},
+{
+  question: "Why JavaScript Engine is needed?",
+  answers: [ //Question 23
+      "Both Compiling & Interpreting the JavaScript",
+      "Parsing the JavaScript",
+      "Interpreting the JavaScript",
+      "Compiling the JavaScript"
+  ],
+  correctAnswer: 2,
+  wrongAnswer: [0, 1, 3]
+},
+{
+  question: "What is the purpose of the 'this' keyword in JavaScript?",
+  answers: [ // Question 24
+      "Refers to the previous function",
+      "Refers to a specific HTML element",
+      "Refers to the current object",
+      "Refers to a global variable"
+  ],
+  correctAnswer: 2,
+  wrongAnswer: [0, 1, 3]
+},
+{
+  question: " What is the basic difference between JavaScript and Java?",
+  answers: [ //Question 25
+      "Functions are considered as fields",
+      "Functions are values, and there is no hard distinction between methods and fields",
+      "Variables are specific",
+      "There is no difference"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
+},
+{
+  question: "Which of the following explains correctly what happens when a JavaScript program is developed on a Unix Machine?",
+  answers: [ //Question 26
+      "will work perfectly well on a Windows Machine",
+      "will be displayed as JavaScript text on the browser",
+      "will throw errors and exceptions",
+      "must be restricted to a Unix Machine only"
+  ],
+  correctAnswer: 0,
+  wrongAnswer: [2, 1, 3]
+},
+{
+  question: " Which of the following can be used to call a JavaScript Code Snippet?",
+  answers: [ //Question 27
+      "Function/Method",
+      "Preprocessor",
+      "Triggering Event",
+      "RMI"
+  ],
+  correctAnswer: 0,
+  wrongAnswer: [2, 1, 3]
+},
+{
+  question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+  answers: [ //Question 28
+      "Position",
+      "Window",
+      "Standard",
+      "Location"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
+},
+{
+  question: " Where is Client-side JavaScript code is embedded within HTML documents?",
+  answers: [ //Question 29
+      "A URL that uses the special javascript: code",
+      "A URL that uses the special javascript: protocol",
+      "A URL that uses the special javascript: encoding",
+      "A URL that uses the special javascript: stack"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
+},
+{
+  question: "Arrays in JavaScript are defined by which of the following statements?",
+  answers: [ //Question 30
+      "It is an ordered list of values",
+      "It is an ordered list of objects",
+      "It is an ordered list of string",
+      "It is an ordered list of functions"
+  ],
+  correctAnswer: 0,
+  wrongAnswer: [2, 1, 3]
+},
+{
+  question: "Among the given statements, which statement defines closures in JavaScript?",
+  answers: [ //Question 31
+      "JavaScript is a function that is enclosed with references to its inner function scope",
+      "JavaScript is a function that is enclosed with references to its lexical environment",
+      "JavaScript is a function that is enclosed with the object to its inner function scope",
+      "None of the mentioned"
+  ],
+  correctAnswer: 1,
+  wrongAnswer: [0, 2, 3]
 }
-];
+  ];
