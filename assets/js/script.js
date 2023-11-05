@@ -102,6 +102,10 @@ function showQuestion(question){
       buttons[selectedIndex].style.backgroundColor = "red";
       incorrect++;
       document.getElementById("incorrect").textContent = incorrect;
+
+      //Highlight correct answer in green
+      buttons[correctIndex].style.backgroundColor = "green";
+      
       gameOver();
     } 
     
