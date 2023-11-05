@@ -34,7 +34,21 @@ let shuffleQuestions, currentQuestionIndex;
       startGame();
   }
 }
-  
+
+/**
+ * This function is responisble for displaying the progressbar
+ */
+
+function progressBar(currentQuestionIndex, totalQuestions) {// This function is inspired by https://www.w3schools.com/howto/howto_js_progressbar.asp
+  let progress = Math.round((currentQuestionIndex / totalQuestions) * 100);
+  let elem = document.getElementById("my-bar");
+  elem.style.width = progress + "%";
+  elem.innerHTML = progress + "%";
+}
+  /**
+   * This function will start the quiz, and show 15 Questions out of a pool of 40 questions in randomised order.
+   */
+
   function startGame(){
 
     let playerName = prompt("Please enter your name:");
@@ -55,9 +69,15 @@ let shuffleQuestions, currentQuestionIndex;
       document.getElementById("counter").style.display = "block"; // show the counter
       nextCard();
     }
+    showQuestion(shuffleQuestions[currentQuestionIndex]);
   }
+  
+  /**
+   * This function will listen to clicking the start button. 
+   * When a player clicks the button the question Cards with all theire elements get displayed.
+   */
 
-    Start.addEventListener("click", function() {
+  Start.addEventListener("click", function() {
       startGame();
       gameStarted = true;
       score = 0;
@@ -69,6 +89,11 @@ let shuffleQuestions, currentQuestionIndex;
       document.getElementById("")
     });
     
+    /**
+     * 
+     * This function is responsible for displaying a question and its corresponding answer options to the user. 
+     */
+
     function showQuestion(question) {
       
       questionCard.innerText = question.question;
@@ -88,8 +113,14 @@ let shuffleQuestions, currentQuestionIndex;
     });
 
     //update the counter
-    document.getElementById("counter").textCounter = (currentQuestionIndex + 1) + "/" + question.lenght;
+    document.getElementById("counter").textContent = (currentQuestionIndex + 1) + "/" + questions.length;
+    
+    progressBar(currentQuestionIndex, shuffleQuestions.length);
   }
+
+/**
+ * This function will remove all child nodes from a specific element in the Document Object Model (DOM). 
+ */
 
   function resetState(){
 
@@ -98,6 +129,13 @@ let shuffleQuestions, currentQuestionIndex;
     }
     /*next.classList.remove("hide");*/
   }
+
+/**
+ * 
+ * This function check the selected Answer of the Player and mark the background of correct answers green and incorrect red. 
+ * If the Player select the wrong answer the correct answer get highlighted with green as well, to show the user the correct answer as well. 
+ * the number 1000 at the end of the function, will display the next card after selecting the answer within a timeframe of 1000ms
+ */
 
   function checkAnswer(selectedIndex) {
     
@@ -132,7 +170,13 @@ let shuffleQuestions, currentQuestionIndex;
         showResult();
       }
     }, 1000);
-  }
+    
+    progressBar(currentQuestionIndex, shuffleQuestions.length);
+}
+
+/**
+ * This function show a "Quiz Finished" message when quiz got completed and resets the game and it's counters.
+ */
 
 function showResult(){
     questionCard.innerText = "Quiz Finished!";
@@ -140,12 +184,20 @@ function showResult(){
     reset(score, incorrect);
   }
 
+  /**
+ * This function resets the correct and incorrect answers counter, when game is completed or lost 
+ */
+
   function reset() {
     incorrect = 0;
     score = 0;
     document.getElementById("score").textContent = score;
     document.getElementById("incorrect").textContent = incorrect;
   }
+
+  /**
+ * This function defines that the game will end and the Player will lose when he answers three times incorrectly
+ */
 
   function gameOver() {
     if(incorrect === 3) {
@@ -507,5 +559,4 @@ function showResult(){
   ],
   correctAnswer: 1,
   wrongAnswer: [0, 2, 3]
-}
-  ];
+}];
