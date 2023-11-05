@@ -14,55 +14,67 @@ let title = document.getElementById("title");
 
 let shuffleQuestions, currentQuestionIndex;
 
-Start.addEventListener("click", function() {
-    startGame();
-    gameStarted = true;
-    score = 0;
-    incorrect = 0;
-    document.getElementById("score").textContent = score;
-    document.getElementById("incorrect").textContent = incorrect;
-    document.querySelector(".score-area").classList.remove("hide");
-    document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
-    document.getElementById("")
-  });
-
-  /*next.addEventListener("click", nextCard);*/
+/*next.addEventListener("click", nextCard);*/
 
   replayMenu.style.display = "none";
-  
-  function startGame(){
-    Start.classList.add("hide");
-
-    //Shuffle questions and select 15 questions
-    shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-    let selectedQuestions = shuffleQuestions.slice(0, 15);
-    
-    //use selected questions in the quiz
-    shuffleQuestions = selectedQuestions;
-
-    currentQuestionIndex = 0;
-    questionBox.classList.remove("hide");
-    document.getElementById("counter").style.display = "block"; // show the counter
-    nextCard();
-  }
 
   function nextCard(){
     resetState();
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(shuffleQuestions[currentQuestionIndex]);
+
+    if ( incorrect >= 3) {
+      gameOver();
+    }
+     else if (currentQuestionIndex < questions.length) {
+      
+      showQuestion(shuffleQuestions[currentQuestionIndex]);
     }
     else
     {
-        showResult();
-        startGame();
-    }
+      showResult();
+      startGame();
+  }
 }
+  
+  function startGame(){
 
-function showQuestion(question){
-    questionCard.innerText = question.question;
-    answerButtons.innerHTML = "";
+    let playerName = prompt("Please enter your name:");
 
-    question.answers.forEach((answer, index) => {
+    if (playerName != null && playerName != '') {
+      
+      Start.classList.add("hide");
+      
+      //Shuffle questions and select 15 questions
+      shuffleQuestions = questions.sort(() => Math.random() - 0.5);
+      let selectedQuestions = shuffleQuestions.slice(0, 15);
+      
+      //use selected questions in the quiz
+      shuffleQuestions = selectedQuestions;
+      
+      currentQuestionIndex = 0;
+      questionBox.classList.remove("hide");
+      document.getElementById("counter").style.display = "block"; // show the counter
+      nextCard();
+    }
+  }
+
+    Start.addEventListener("click", function() {
+      startGame();
+      gameStarted = true;
+      score = 0;
+      incorrect = 0;
+      document.getElementById("score").textContent = score;
+      document.getElementById("incorrect").textContent = incorrect;
+      document.querySelector(".score-area").classList.remove("hide");
+      document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
+      document.getElementById("")
+    });
+    
+    function showQuestion(question) {
+      
+      questionCard.innerText = question.question;
+      answerButtons.innerHTML = "";
+
+      question.answers.forEach((answer, index) => {
         const button = document.createElement("button");
 
         button.classList.add("btn");
@@ -105,8 +117,6 @@ function showQuestion(question){
 
       //Highlight correct answer in green
       buttons[correctIndex].style.backgroundColor = "green";
-      
-      gameOver();
     } 
     
     for (const button of buttons) {
