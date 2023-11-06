@@ -130,6 +130,7 @@ h2 {
 #progress-bar { /*based on: https://www.w3schools.com/howto/howto_js_progressbar.asp*/
     width: 100%;
     background-color: grey;
+    visibility: hidden;
 }
 
 #my-bar { /*based on: https://www.w3schools.com/howto/howto_js_progressbar.asp*/

@@ -70,6 +70,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       nextCard();
     }
     showQuestion(shuffleQuestions[currentQuestionIndex]);
+    document.getElementById("progress-bar").style.visibility = "visible";
   }
   
   /**
@@ -86,7 +87,6 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       document.getElementById("incorrect").textContent = incorrect;
       document.querySelector(".score-area").classList.remove("hide");
       document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
-      document.getElementById("")
     });
     
     /**
