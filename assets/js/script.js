@@ -71,6 +71,8 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
     }
     showQuestion(shuffleQuestions[currentQuestionIndex]);
     document.getElementById("progress-bar").style.visibility = "visible";
+
+    let gameSound = document.getElementById("audio").play();
   }
   
   /**
@@ -282,8 +284,8 @@ function showResult(){
         "Make decisions in your code",
         "Create a class"
     ],
-    correctAnswer: 0,
-    wrongAnswer: [1, 2, 3]
+    correctAnswer: 2,
+    wrongAnswer: [1, 0, 3]
 },
 {
     question: "What method is used to add a new element to the end of an array in JavaScript?",
