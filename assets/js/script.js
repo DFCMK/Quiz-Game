@@ -70,15 +70,18 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       nextCard();
     }
     showQuestion(shuffleQuestions[currentQuestionIndex]);
-    document.getElementById("progress-bar").style.visibility = "visible";
 
-    let gameSound = document.getElementById("audio").play();
+    document.getElementById("progress-bar").style.visibility = "visible";
+    document.getElementById("mute-btn").style.display = "block";
+
+    gameSound.play();
   }
   
   /**
    * This function will listen to clicking the start button. 
    * When a player clicks the button the question Cards with all theire elements get displayed.
    */
+let gameSound = document.getElementById("audio")
 
   Start.addEventListener("click", function() {
       startGame();
@@ -89,6 +92,11 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       document.getElementById("incorrect").textContent = incorrect;
       document.querySelector(".score-area").classList.remove("hide");
       document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
+
+      document.getElementById("mute-btn").addEventListener("click", function () {
+        gameSound.muted = !gameSound.muted;
+        this.textContent = gameSound.muted ? "Unmute" : "Mute";
+      }); 
     });
     
     /**
@@ -208,7 +216,10 @@ function showResult(){
         reset(incorrect, score);
         replayMenu.style.display = "block"; //show replay menu
         title.classList.add("hide");
+        gameSound.pause();
     }
+    // Hide mute button again
+    document.getElementById("mute-btn").style.display = "none";
   }
 
   document.getElementById("play-again-btn").addEventListener("click", () => {
