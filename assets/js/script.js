@@ -81,7 +81,9 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
    * This function will listen to clicking the start button. 
    * When a player clicks the button the question Cards with all theire elements get displayed.
    */
-let gameSound = document.getElementById("audio")
+let gameSound = document.getElementById("audio");
+let correctSound = document.getElementById("correct");
+let wrongSound = document.getElementById("wrong")
 
   Start.addEventListener("click", function() {
       startGame();
@@ -147,6 +149,8 @@ let gameSound = document.getElementById("audio")
  * the number 1000 at the end of the function, will display the next card after selecting the answer within a timeframe of 1000ms
  */
 
+ 
+
   function checkAnswer(selectedIndex) {
     
     const correctIndex = questions[currentQuestionIndex].correctAnswer;
@@ -156,15 +160,24 @@ let gameSound = document.getElementById("audio")
       buttons[selectedIndex].style.backgroundColor = "green";
       score++;
       document.getElementById("score").textContent = score;
+      //EXPERIMENTING HERE!!! DELETE IF IT DONT WORK
+      correctSound.play();
+      gameSound.play();
     } 
     else if (selectedIndex !== correctIndex)
     {
       buttons[selectedIndex].style.backgroundColor = "red";
       incorrect++;
       document.getElementById("incorrect").textContent = incorrect;
+      wrongSound.play();
+      gameSound.pause();
 
       //Highlight correct answer in green
       buttons[correctIndex].style.backgroundColor = "green";
+
+      setTimeout(function() {
+        gameSound.play();
+      },6000);
     } 
     
     for (const button of buttons) {
