@@ -608,4 +608,103 @@ function showResult(){
   ],
   correctAnswer: 1,
   wrongAnswer: [0, 2, 3]
-}];
+},
+  {
+    question: "What does var stand for in JavaScript?",
+    answers: [ //Question 32
+        "Variable",
+        "Very large",
+        "Varying",
+        "Variable and not reassigned"
+    ],
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
+  },
+  {
+    question: "What is the correct way to write a JavaScript array?",
+    answers: [ //Question 33
+        'var colors = "red", "green", "blue";',
+        'var colors = ["red", "green", "blue"];',
+        'var colors = (1:"red", 2:"green", 3:"blue");',
+        'var colors = {1:"red", 2:"green", 3:"blue"};'
+    ],
+    correctAnswer: 1,
+    wrongAnswer: [0, 2, 3]
+  },
+  {
+    question: "What is the correct way to write a JavaScript function?",
+    answers: [ //Question 34
+        "function:myFunction()",
+        "function = myFunction()",
+        "function myFunction()",
+        "function:myFunction"
+    ],
+    correctAnswer: 2,
+    wrongAnswer: [0, 1, 3]
+  },
+  {
+    question: "How do you write a JavaScript for loop?",
+    answers: [ //Question 35
+        "for (i = 0; i <= 5; i++)",
+        "for i = 0 to 5",
+        "for (i <= 5; i++)",
+        "for i = 0 to 5"
+    ],
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
+  },
+  {
+    question: "What does == do in JavaScript?",
+    answers: [ //Question 36
+        "Assigns a value to a variable",
+        "Compares two values",
+        "Adds two values",
+        "Subtracts two values"
+    ],
+    correctAnswer: 1,
+    wrongAnswer: [0, 2, 3]
+  },
+  {
+    question: "How do you write a JavaScript while loop?",
+    answers: [ //Question 37
+        "while i = 0 to 5",
+        "while (i <= 5; i++)",
+        "while (i <= 5)",
+        "while i = 0 to 5"
+    ],
+    correctAnswer: 2,
+    wrongAnswer: [0, 1, 3]
+  },
+  {
+    question: 'What is the output of console.log(10 + 5 + "10");?',
+    answers: [ //Question 38
+        "25",
+        "2010",
+        "2510",
+        "35"
+    ],
+    correctAnswer: 1,
+    wrongAnswer: [0, 2, 3]
+  },
+  {
+    question: "What does typeof do in JavaScript?",
+    answers: [ //Question 39
+        "Returns the type of a variable",
+        "Changes the type of a variable",
+        "Deletes a variable",
+        "Multiplies a variable by 2"
+    ],
+    correctAnswer: 0,
+    wrongAnswer: [1, 2, 3]
+  },
+  {
+    question: "Which one of the following also known as Conditional Expression:",
+    answers: [ //Question 40
+        "Alternative to if-else",
+        "Switch statement",
+        "If-then-else statement",
+        "immediate if"
+    ],
+    correctAnswer: 3,
+    wrongAnswer: [0, 2, 1]
+}]
