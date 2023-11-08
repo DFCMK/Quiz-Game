@@ -115,7 +115,11 @@ let wrongSound = document.getElementById("wrong")
 
       document.getElementById("mute-btn").addEventListener("click", function () {
         gameSound.muted = !gameSound.muted;
+        wrongSound.muted = !wrongSound.muted;
+        correctSound.muted = !correctSound.muted;
         this.textContent = gameSound.muted ? "Unmute" : "Mute";
+        this.textContent = wrongSound.muted ? "Unmute" : "Mute";
+        this.textContent = correctSound.muted ? "Unmute" : "Mute";
       }); 
     });
     
@@ -178,7 +182,7 @@ let wrongSound = document.getElementById("wrong")
       buttons[selectedIndex].style.backgroundColor = "green";
       score++;
       document.getElementById("score").textContent = score;
-      //EXPERIMENTING HERE!!! DELETE IF IT DONT WORK
+
       correctSound.play();
       gameSound.play();
     } 
@@ -195,7 +199,7 @@ let wrongSound = document.getElementById("wrong")
 
       setTimeout(function() {
         gameSound.play();
-      },6000);
+      },1500);
     } 
     
     for (const button of buttons) {
