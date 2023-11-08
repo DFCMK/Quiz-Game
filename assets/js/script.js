@@ -252,6 +252,7 @@ function showResult(){
         replayMenu.style.display = "block"; //show replay menu
         title.classList.add("hide");
         gameSound.pause();
+        questionBox.classList.add("hide");//hide question cards
     }
     // Hide mute button again
     document.getElementById("mute-btn").style.display = "none";
