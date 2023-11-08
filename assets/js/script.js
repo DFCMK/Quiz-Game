@@ -210,7 +210,7 @@ let wrongSound = document.getElementById("wrong")
       {
         showResult();
       }
-    }, 1000);
+    }, 1500);
     
     progressBar(currentQuestionIndex, shuffleQuestions.length);
 }
