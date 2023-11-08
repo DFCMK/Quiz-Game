@@ -14,7 +14,25 @@ let title = document.getElementById("title");
 
 let shuffleQuestions, currentQuestionIndex;
 
+
 /*next.addEventListener("click", nextCard);*/
+
+function checkPage() {
+  if(document.title === "Quiz Homepage") {
+    document.getElementById("home-start-btn").addEventListener("click", function() {
+      document.getElementById("homepage").classList.add("hide");
+      document.getElementById("quiz").classList.remove("hide");
+    });
+  }
+  else
+  {
+    document.getElementById("start-btn").addEventListener("click", function() {
+      document.getElementById("quiz").classList.remove("hide");
+    })
+  }
+}
+
+checkPage();
 
   replayMenu.style.display = "none";
 
@@ -48,7 +66,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   /**
    * This function will start the quiz, and show 15 Questions out of a pool of 40 questions in randomised order.
    */
-
+  
   function startGame(){
 
     let playerName = prompt("Please enter your name:");
