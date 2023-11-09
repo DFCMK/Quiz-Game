@@ -12,9 +12,6 @@ let PlayAgain = document.getElementById("play-again-btn");
 let title = document.getElementById("title");
 /*let Quit = document.getElementById("quit-btn");*/
 
-let shuffleQuestions, currentQuestionIndex;
-
-
 /*next.addEventListener("click", nextCard);*/
 
 function checkPage() {
@@ -42,14 +39,14 @@ checkPage();
     if ( incorrect >= 3) {
       gameOver();
     }
-     else if (currentQuestionIndex < questions.length) {
+     else if (currentQuestionIndex < selectedQuestions.length) {
       
-      showQuestion(shuffleQuestions[currentQuestionIndex]);
+      showQuestion(selectedQuestions[currentQuestionIndex]);
     }
     else
     {
       showResult();
-      startGame();
+      /*startGame();*/
   }
 }
 
@@ -66,10 +63,13 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   /**
    * This function will start the quiz, and show 15 Questions out of a pool of 40 questions in randomised order.
    */
-  
+let selectedQuestions;
+let playerName;
+let shuffleQuestions, currentQuestionIndex;
+
   function startGame(){
 
-    let playerName = prompt("Please enter your name:");
+    playerName = prompt("Please enter your name:");
 
     if (playerName != null && playerName != '') {
       
@@ -77,22 +77,17 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-      let selectedQuestions = shuffleQuestions.slice(0, 15);
-      
-      //use selected questions in the quiz
-      shuffleQuestions = selectedQuestions;
+      selectedQuestions = shuffleQuestions.slice(0, 15);
       
       currentQuestionIndex = 0;
       questionBox.classList.remove("hide");
       document.getElementById("counter").style.display = "block"; // show the counter
-      nextCard();
-    }
-    showQuestion(shuffleQuestions[currentQuestionIndex]);
-
-    document.getElementById("progress-bar").style.visibility = "visible";
+      document.getElementById("progress-bar").style.visibility = "visible";
     document.getElementById("mute-btn").style.display = "block";
-
+    
+    showQuestion(selectedQuestions[currentQuestionIndex]);
     gameSound.play();
+    }
   }
   
   /**
@@ -147,9 +142,9 @@ let wrongSound = document.getElementById("wrong")
     });
 
     //update the counter
-    document.getElementById("counter").textContent = (currentQuestionIndex + 1) + "/" + questions.length;
+    document.getElementById("counter").textContent = (currentQuestionIndex + 1) + "/" + selectedQuestions.length;
     
-    progressBar(currentQuestionIndex, shuffleQuestions.length);
+    progressBar(currentQuestionIndex, selectedQuestions.length);
   }
 
 /**
@@ -216,7 +211,7 @@ let wrongSound = document.getElementById("wrong")
       }
     }, 1500);
     
-    progressBar(currentQuestionIndex, shuffleQuestions.length);
+    progressBar(currentQuestionIndex, selectedQuestions.length);
 }
 
 /**
@@ -260,7 +255,7 @@ function showResult(){
 
   document.getElementById("play-again-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
-    gameStarted = flase;
+    gameStarted = false;
   });
 
   /*document.getElementById("quit-btn").addEventListener("click", () => {
