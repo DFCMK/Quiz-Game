@@ -10,7 +10,7 @@ let gameStarted = false;
 let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
 let title = document.getElementById("title");
-/*let Quit = document.getElementById("quit-btn");*/
+let Quit = document.getElementById("quit-btn");
 
 /*next.addEventListener("click", nextCard);*/
 
@@ -60,13 +60,14 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   elem.style.width = progress + "%";
   elem.innerHTML = progress + "%";
 }
+
   /**
    * This function will start the quiz, and show 15 Questions out of a pool of 40 questions in randomised order.
    */
-let selectedQuestions;
-let playerName;
-let shuffleQuestions, currentQuestionIndex;
-
+  let selectedQuestions;
+  let playerName;
+  let shuffleQuestions, currentQuestionIndex;
+  
   function startGame(){
 
     playerName = prompt("Please enter your name:");
@@ -94,10 +95,7 @@ let shuffleQuestions, currentQuestionIndex;
    * This function will listen to clicking the start button. 
    * When a player clicks the button the question Cards with all theire elements get displayed.
    */
-let gameSound = document.getElementById("audio");
-let correctSound = document.getElementById("correct");
-let wrongSound = document.getElementById("wrong")
-
+  
   Start.addEventListener("click", function() {
       startGame();
       gameStarted = true;
@@ -107,18 +105,45 @@ let wrongSound = document.getElementById("wrong")
       document.getElementById("incorrect").textContent = incorrect;
       document.querySelector(".score-area").classList.remove("hide");
       document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
+  });
+      
+       
+      
+     /**
+      * This section handle the mute button and mute gameSound and sound effects if clicked
+      *  */ 
 
-      document.getElementById("mute-btn").addEventListener("click", function () {
-        gameSound.muted = !gameSound.muted;
-        wrongSound.muted = !wrongSound.muted;
-        correctSound.muted = !correctSound.muted;
-        this.textContent = gameSound.muted ? "Unmute" : "Mute";
-        this.textContent = wrongSound.muted ? "Unmute" : "Mute";
-        this.textContent = correctSound.muted ? "Unmute" : "Mute";
-      }); 
-    });
-    
-    /**
+      let gameSound = document.getElementById("audio");
+      let correctSound = document.getElementById("correct");
+      let wrongSound = document.getElementById("wrong");
+      let isMuted = false; //Track the mute/unmute state
+      let muteButton = document.getElementById("mute-btn");
+      let muteIcon = document.getElementById("mute-icon");
+      let unmuteIcon = document.getElementById("unmute-icon");
+      
+      muteButton.addEventListener("click", function () {
+        isMuted = !isMuted;
+        updateMuteButton();
+
+        gameSound.muted = isMuted;
+        wrongSound.muted = isMuted; 
+        correctSound.muted = isMuted;
+      });
+      
+      //Update the mute/unmute button state based on isMuted
+      function updateMuteButton() {
+        if(isMuted) {
+          muteIcon.style.display = "inline";
+          unmuteIcon.style.display = "none";
+        }
+        else
+        {
+          muteIcon.style.display = "none";
+          unmuteIcon.style.display = "inline";
+        }
+      }
+      
+      /**
      * 
      * This function is responsible for displaying a question and its corresponding answer options to the user. 
      */
