@@ -11,25 +11,27 @@ let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
 let title = document.getElementById("title");
 let Quit = document.getElementById("quit-btn");
+let startHome = document.getElementById("start-btn-btn");
 
 /*next.addEventListener("click", nextCard);*/
 
 function checkPage() {
   if(document.title === "Quiz Homepage") {
-    document.getElementById("home-start-btn").addEventListener("click", function() {
+    document.getElementById("quiz").classList.add("hide");
+    startHome.addEventListener("click", function() {
+      startGame();
+      startHome.style.display = "none";
+      Start.style.display = "none";
       document.getElementById("homepage").classList.add("hide");
       document.getElementById("quiz").classList.remove("hide");
     });
   }
-  else
-  {
-    document.getElementById("start-btn").addEventListener("click", function() {
-      document.getElementById("quiz").classList.remove("hide");
-    })
-  }
 }
+  
 
 checkPage();
+
+
 
   replayMenu.style.display = "none";
 
@@ -104,8 +106,14 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       document.getElementById("score").textContent = score;
       document.getElementById("incorrect").textContent = incorrect;
       document.querySelector(".score-area").classList.remove("hide");
-      document.getElementById("start-btn").style.visibility = "hidden"; //Hide start button after initialy clicked
-  });
+      Start.style.visibility = "hidden"; //Hide start button after initialy clicked
+      document.getElementById("homepage").style.display = "none"; // Hide the homepage
+
+    // Redirect to game.html
+    window.location.href = "game.html"; // Change the URL to game.html
+    
+    });
+
       
        
       

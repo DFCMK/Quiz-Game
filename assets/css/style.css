@@ -1,7 +1,5 @@
 :root { /*Web Dev Simplified Tutorial*/
     --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
 }
 
 body {
@@ -53,13 +51,12 @@ body {
 
 }
 
-#start-btn {
+#start-btn, #start-btn-btn {
     background-color: hsl(var(--hue),100%, 70%);
     font-size: 1.4rem;
     font-weight: bold; 
     padding: 10px 20px; 
     border-radius: 5px;
-    /*start button*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,6 +161,25 @@ h2 {
 
 #unmute-icon {
     display: none;
+}
+
+
+#bg-image {
+    width: 100vw;
+    height: 100vh;
+    background: url("/assets/images/ae23761d-975a-45ff-b84f-78ffcda3c6b0.png") no-repeat center/cover;
+}
+
+#text-overlay {
+    top: 50%;
+    left: 50%; 
+    color: #DDE3fD;
+    font-size: 24px;
+    font-weight: bold;   
+    padding: 20px;
+}
+#text-overlay h2 {
+    font-size: 2rem;
 }
 
 .hide {
