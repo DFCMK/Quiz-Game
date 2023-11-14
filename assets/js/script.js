@@ -254,7 +254,7 @@ function checkAnswer(selectedIndex) {
 function showResult(){
     questionCard.innerText = `Congratulations ${playerName} you finished the quiz and got ${score} questions correct!`;
     resetState();
-    reset(score, incorrect);
+    /*reset(score, incorrect);*/
   }
 
   /**
