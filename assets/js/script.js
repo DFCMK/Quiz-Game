@@ -109,8 +109,12 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
     window.location.href = "game.html"; // Change the URL to game.html
     
     });
-
-      
+    
+    Quit.addEventListener("click", quitButton);
+    
+    function quitButton() {
+    window.location.href = "index.html";
+  }
        
       
      /**
