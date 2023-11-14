@@ -64,16 +64,18 @@ body {
     height: 100%;
 }
 
-.controls {
+/*.controls {
     display: flex; 
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .score-area {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 #score {
@@ -164,20 +166,24 @@ h2 {
 }
 
 
-#bg-image {
+#homepage {
     width: 100vw;
-    height: 100vh;
-    background: url("/assets/images/ae23761d-975a-45ff-b84f-78ffcda3c6b0.png") no-repeat center/cover;
+    height: 100%;
+    background: url("/assets/images/jon-tyson-FlHdnPO6dlw-unsplash.jpg") no-repeat center/cover;
 }
 
 #text-overlay {
+    position: relative;
     top: 50%;
     left: 50%; 
+    transform: translate(-50%, -50%);
     color: #DDE3fD;
+    text-align: center;
     font-size: 24px;
-    font-weight: bold;   
-    padding: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 1, 5, 1);   
 }
+
 #text-overlay h2 {
     font-size: 2rem;
 }

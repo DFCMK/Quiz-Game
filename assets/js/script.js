@@ -31,24 +31,19 @@ function checkPage() {
 
 checkPage();
 
-
-
-  replayMenu.style.display = "none";
-
-  function nextCard(){
+function nextCard(){
     resetState();
 
     if ( incorrect >= 3) {
       gameOver();
     }
-     else if (currentQuestionIndex < selectedQuestions.length) {
-      
+     else if (currentQuestionIndex < selectedQuestions.length -1) {
+      currentQuestionIndex++;
       showQuestion(selectedQuestions[currentQuestionIndex]);
     }
     else
     {
       showResult();
-      /*startGame();*/
   }
 }
 
@@ -71,7 +66,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   let shuffleQuestions, currentQuestionIndex;
   
   function startGame(){
-
+    
     playerName = prompt("Please enter your name:");
 
     if (playerName != null && playerName != '') {
@@ -86,7 +81,8 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       questionBox.classList.remove("hide");
       document.getElementById("counter").style.display = "block"; // show the counter
       document.getElementById("progress-bar").style.visibility = "visible";
-    document.getElementById("mute-btn").style.display = "block";
+      document.getElementById("mute-btn").style.display = "block";
+
     
     showQuestion(selectedQuestions[currentQuestionIndex]);
     gameSound.play();
@@ -108,7 +104,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       document.querySelector(".score-area").classList.remove("hide");
       Start.style.visibility = "hidden"; //Hide start button after initialy clicked
       document.getElementById("homepage").style.display = "none"; // Hide the homepage
-
+   
     // Redirect to game.html
     window.location.href = "game.html"; // Change the URL to game.html
     
@@ -157,6 +153,8 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
      */
 
     function showQuestion(question) {
+
+      console.log("showQuestion called");
       
       questionCard.innerText = question.question;
       answerButtons.innerHTML = "";
@@ -178,7 +176,8 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
     document.getElementById("counter").textContent = (currentQuestionIndex + 1) + "/" + selectedQuestions.length;
     
     progressBar(currentQuestionIndex, selectedQuestions.length);
-  }
+ }
+  
 
 /**
  * This function will remove all child nodes from a specific element in the Document Object Model (DOM). 
@@ -199,9 +198,9 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
  * the number 1000 at the end of the function, will display the next card after selecting the answer within a timeframe of 1000ms
  */
 
- 
+function checkAnswer(selectedIndex) {
 
-  function checkAnswer(selectedIndex) {
+  console.log("does this acutaly get called?");
     
     const correctIndex = questions[currentQuestionIndex].correctAnswer;
     const buttons = answerButtons.getElementsByTagName("button");
@@ -288,7 +287,7 @@ function showResult(){
 
   document.getElementById("play-again-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
-    gameStarted = false;
+    startGame();
   });
 
   /*document.getElementById("quit-btn").addEventListener("click", () => {

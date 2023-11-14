@@ -9,14 +9,12 @@
 </head>
 <body>
   <div id="homepage">
-    <div id="bg-image">
     <div id="text-overlay">
     <h1>Welcome to our JavaScript Quiz</h1>
         <p>The quiz contains 15 questions and you have to get at least 12 questions correct, otherwise the quiz will end and you will have the option to replay and try again!</p>
         <button id="start-btn-btn" class="start-btn-btn hide">Start</button>
         </div>
       </div>
-    </div>
     <div id="quiz">
         <audio id="audio">
           <source src="assets/soundtrack/thinking-time-148496.mp3"></audio>
@@ -31,6 +29,7 @@
         <audio id="correct">
           <source src="assets/soundtrack/correct-6033.mp3">
         </audio>
+        <h2 id="title">JavaScript Quiz</h2>
         <div id="counter">Question:<span>1/15</span></div>
         <button id="quit-btn"><i class="fa-solid fa-circle-xmark icon"></i></button>
         <div id="progress-bar"> <!--Line 14-15 are based on: https://www.w3schools.com/howto/howto_js_progressbar.asp-->
@@ -41,7 +40,7 @@
           <div id="answer-btn" class="btn-grid">
             </div>
           <div id="results" class="hide"></div>
-          <div class="score-area hide"> Based on Love Math project code
+          <div class="score-area"> <!--Based on Love Math project code-->
             <p class="scores">Correct:<span id="score">0</span></p>
             <p class="Incorrect Answers">Incorrect:<span id="incorrect">0</span></p>
           </div>
