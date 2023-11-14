@@ -37,8 +37,7 @@ function nextCard(){
     if ( incorrect >= 3) {
       gameOver();
     }
-     else if (currentQuestionIndex < selectedQuestions.length -1) {
-      currentQuestionIndex++;
+     else if (currentQuestionIndex < selectedQuestions.length) {
       showQuestion(selectedQuestions[currentQuestionIndex]);
     }
     else
@@ -119,7 +118,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       
      /**
       * This section handle the mute button and mute gameSound and sound effects if clicked
-      *  */ 
+      * */ 
 
       let gameSound = document.getElementById("audio");
       let correctSound = document.getElementById("correct");
@@ -203,13 +202,11 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
  */
 
 function checkAnswer(selectedIndex) {
-
-  console.log("does this acutaly get called?");
-    
-    const correctIndex = questions[currentQuestionIndex].correctAnswer;
-    const buttons = answerButtons.getElementsByTagName("button");
   
-    if (selectedIndex === correctIndex) {
+  const correctIndex = questions[currentQuestionIndex].correctAnswer;
+  const buttons = answerButtons.getElementsByTagName("button");
+  
+  if (selectedIndex === correctIndex) {
       buttons[selectedIndex].style.backgroundColor = "green";
       score++;
       document.getElementById("score").textContent = score;
@@ -255,7 +252,7 @@ function checkAnswer(selectedIndex) {
  */
 
 function showResult(){
-    questionCard.innerText = "Quiz Finished!";
+    questionCard.innerText = `Congratulations ${playerName} you finished the quiz and got ${score} questions correct!`;
     resetState();
     reset(score, incorrect);
   }
