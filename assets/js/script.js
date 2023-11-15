@@ -34,7 +34,7 @@ checkPage();
 function nextCard(){
     resetState();
 
-    if ( incorrect >= 3) {
+    if ( incorrect >= 4) {
       gameOver();
     }
      else if (currentQuestionIndex < selectedQuestions.length) {
@@ -64,17 +64,74 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   let playerName;
   let shuffleQuestions, currentQuestionIndex;
   
-  function startGame(){
-    
-    playerName = prompt("Please enter your name:");
+  //EXPERIMENTE
+  /*function startGame() {
+    // Show the modal
+    openModal();
+
+    // Handle the submission in submitName function
+}*/
+
+
+
+
+
+/*function submitName() {
+    playerName = document.getElementById('userName').value;
 
     if (playerName != null && playerName != '') {
-      
+        Start.classList.add("hide");
+
+       // Shuffle questions and select 15 questions
+        shuffleQuestions = questions.sort(() => Math.random() - 0.5);
+        selectedQuestions = shuffleQuestions.slice(0, 2);
+
+        currentQuestionIndex = 0;
+        questionBox.classList.remove("hide");
+        document.getElementById("counter").style.display = "block";
+        document.getElementById("progress-bar").style.visibility = "visible";
+        document.getElementById("mute-btn").style.display = "block";
+
+        showQuestion(selectedQuestions[currentQuestionIndex]);
+        gameSound.play();
+
+        // Close the modal
+        closeModal();
+    }
+}*/
+
+  
+  
+
+
+  
+  
+function openModal() {
+  document.getElementById('myModal').style.display = 'block';
+  /*window.location.href="index.html";*/
+}
+  
+  
+  
+  
+  
+  function startGame(){
+
+    openModal();
+    
+    playerName = document.getElementById('userName').value;
+
+    if (!(playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName))) {
+
+      alert("Please enter a valid name with at least one letter and can include numbers.");
+    }
+    else
+    {
       Start.classList.add("hide");
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-      selectedQuestions = shuffleQuestions.slice(0, 15);
+      selectedQuestions = shuffleQuestions.slice(0, 2);
       
       currentQuestionIndex = 0;
       questionBox.classList.remove("hide");
@@ -85,8 +142,14 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
     
     showQuestion(selectedQuestions[currentQuestionIndex]);
     gameSound.play();
+    closeModal();
     }
   }
+  
+  function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+}
+
   
   /**
    * This function will listen to clicking the start button. 
@@ -94,6 +157,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
    */
   
   Start.addEventListener("click", function() {
+    openModal();
       startGame();
       gameStarted = true;
       score = 0;
@@ -273,8 +337,8 @@ function showResult(){
  */
 
   function gameOver() {
-    if(incorrect === 3) {
-        alert("Game Over, you were three times wrong!");
+    if(incorrect === 4) {
+        alert(`Game Over ${playerName}, you were three times wrong!`);
         resetState();
         reset(incorrect, score);
         replayMenu.style.display = "block"; //show replay menu
