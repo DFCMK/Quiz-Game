@@ -14,6 +14,14 @@
         <p>The quiz contains 15 questions and you have to get at least 12 questions correct, otherwise the quiz will end and you will have the option to replay and try again!</p>
         <button id="start-btn-btn" class="start-btn-btn hide">Start</button>
         </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span id="close" onclick="closeModal()">&times;</span>
+            <p>Enter your name:</p>
+            <input type="text" id="userName">
+            <button onclick="startGame()">Submit</button>
+          </div>
+        </div>
       </div>
     <div id="quiz">
         <audio id="audio">
@@ -46,15 +54,6 @@
           </div>
         </div>
         <button id="start-btn" class="start-btn-btn hide">Start</button>
-        <!--Modal-->
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Enter your name:</p>
-            <input type="text" id="userName">
-            <button onclick="startGame()">Submit</button>
-          </div>
-        </div>
         <div id="replay-menu" class="hide">
           <p class="game-over-msg">Game Over! Do you want to play again?</p>
           <button id="play-again-btn">Play Again</button>

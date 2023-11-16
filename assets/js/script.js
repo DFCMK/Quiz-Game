@@ -31,6 +31,10 @@ function checkPage() {
 
 checkPage();
 
+startHome.getElementById("start-btn-btn").addEventListener("click", function() {
+  openModal();
+});
+
 function nextCard(){
     resetState();
 
@@ -121,17 +125,13 @@ function openModal() {
     
     playerName = document.getElementById('userName').value;
 
-    if (!(playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName))) {
+    if (playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName)) {
 
-      alert("Please enter a valid name with at least one letter and can include numbers.");
-    }
-    else
-    {
       Start.classList.add("hide");
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-      selectedQuestions = shuffleQuestions.slice(0, 2);
+      selectedQuestions = shuffleQuestions.slice(0, 15);
       
       currentQuestionIndex = 0;
       questionBox.classList.remove("hide");
