@@ -68,58 +68,12 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   let playerName;
   let shuffleQuestions, currentQuestionIndex;
   
-  //EXPERIMENTE
-  /*function startGame() {
-    // Show the modal
-    openModal();
 
-    // Handle the submission in submitName function
-}*/
-
-
-
-
-
-/*function submitName() {
-    playerName = document.getElementById('userName').value;
-
-    if (playerName != null && playerName != '') {
-        Start.classList.add("hide");
-
-       // Shuffle questions and select 15 questions
-        shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-        selectedQuestions = shuffleQuestions.slice(0, 2);
-
-        currentQuestionIndex = 0;
-        questionBox.classList.remove("hide");
-        document.getElementById("counter").style.display = "block";
-        document.getElementById("progress-bar").style.visibility = "visible";
-        document.getElementById("mute-btn").style.display = "block";
-
-        showQuestion(selectedQuestions[currentQuestionIndex]);
-        gameSound.play();
-
-        // Close the modal
-        closeModal();
-    }
-}*/
-
-  
-  
-
-
-  
-  
 function openModal() {
   document.getElementById('myModal').style.display = 'block';
-  /*window.location.href="index.html";*/
 }
   
-  
-  
-  
-  
-  function startGame(){
+function startGame(){
 
     openModal();
     
@@ -214,7 +168,7 @@ function openModal() {
         }
       }
       
-      /**
+     /**
      * 
      * This function is responsible for displaying a question and its corresponding answer options to the user. 
      */
@@ -355,10 +309,7 @@ function showResult(){
     startGame();
   });
 
-  /*document.getElementById("quit-btn").addEventListener("click", () => {
-    replayMenu.style.display = "none";
-  });*/
-
+  
   let questions = [
     {
     question: "What is JavaScript primarily used for?",
