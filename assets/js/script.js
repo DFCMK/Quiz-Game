@@ -20,11 +20,11 @@ let modal = document.querySelector(".modal-overlay");
 /*let closeBtn = document.querySelector(".close-modal-btn");*/
 
 function openModal() {
-  modal.classList.remove("hide");
+  modal.style.display = "block";
 }
 
 function closeModal() {
-  modal.classList.add("hide");
+  modal.style.display = "none";
 }
 
 openBtn.addEventListener("click", openModal);
@@ -94,8 +94,8 @@ function startGame(){
     document.getElementById('player-form').addEventListener('submit', function(e) {
       e.preventDefault();
       playerName = document.getElementById('playerName').value;
-
-    if (playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName)) {
+      
+      if (playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName)) {
 
       Start.classList.add("hide");
       
