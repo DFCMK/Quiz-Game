@@ -1,4 +1,5 @@
-let Start = document.getElementById("start-btn");
+
+let Start = document.getElementById("start-btn-quiz");
 /*let next = document.getElementById("next-btn");*/
 let questionBox =  document.getElementById("question-box");
 let questionCard = document.getElementById("question");
@@ -11,29 +12,47 @@ let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
 let title = document.getElementById("title");
 let Quit = document.getElementById("quit-btn");
-let startHome = document.getElementById("start-btn-btn");
+
+
+/*https://www.geeksforgeeks.org/how-to-create-a-modal-box-using-html-css-and-javascript*/
+let openBtn = document.getElementById("start-btn-home");;
+let modal = document.querySelector(".modal-overlay");
+/*let closeBtn = document.querySelector(".close-modal-btn");*/
+
+function openModal() {
+  modal.classList.remove("hide");
+}
+
+function closeModal() {
+  modal.classList.add("hide");
+}
+
+openBtn.addEventListener("click", openModal);
+modal.addEventListener("click", (e) => closeModal(e, true));
+/*closeBtn.addEventListener("click", closeModal);*/
 
 /*next.addEventListener("click", nextCard);*/
 
 function checkPage() {
   if(document.title === "Quiz Homepage") {
     document.getElementById("quiz").classList.add("hide");
-    startHome.addEventListener("click", function() {
+    document.getElementById("homepage").classList.remove("hide");
+    openBtn.addEventListener("click", function() {
       startGame();
-      startHome.style.display = "none";
+      document.getElementById("start-btn-home").style.display = "none";
       Start.style.display = "none";
-      document.getElementById("homepage").classList.add("hide");
+      /*document.getElementById("homepage").classList.add("hide");*/
       document.getElementById("quiz").classList.remove("hide");
-    });
+      });
+      Quit.addEventListener("click", function() {
+        openBtn.style.display = "visible";
+      })
+    }
   }
-}
   
 
 checkPage();
 
-startHome.getElementById("start-btn-btn").addEventListener("click", function() {
-  openModal();
-});
 
 function nextCard(){
     resetState();
@@ -68,16 +87,13 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   let playerName;
   let shuffleQuestions, currentQuestionIndex;
   
-
-function openModal() {
-  document.getElementById('myModal').style.display = 'block';
-}
-  
 function startGame(){
 
     openModal();
-    
-    playerName = document.getElementById('userName').value;
+
+    document.getElementById('player-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      playerName = document.getElementById('playerName').value;
 
     if (playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName)) {
 
@@ -98,12 +114,10 @@ function startGame(){
     gameSound.play();
     closeModal();
     }
-  }
-  
-  function closeModal() {
-    document.getElementById('myModal').style.display = 'none';
+  });
 }
-
+  
+ 
   
   /**
    * This function will listen to clicking the start button. 
