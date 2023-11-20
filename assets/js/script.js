@@ -351,10 +351,8 @@ function showResult(){
   });
 
   function quizFinished() {
-    console.log("Checking quiz finished condition...", currentQuestionIndex, selectedQuestions.length);
     if (currentQuestionIndex >= selectedQuestions.length) {
       replayButton.style.display = "block";
-      console.log("quiz finished...")
     }
   }
 
