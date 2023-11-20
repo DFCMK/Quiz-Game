@@ -254,8 +254,8 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
 /**
  * 
  * This function check the selected Answer of the Player and mark the background of correct answers green and incorrect red. 
- * If the Player select the wrong answer the correct answer get highlighted with green as well, to show the user the correct answer as well. 
- * the number 1000 at the end of the function, will display the next card after selecting the answer within a timeframe of 1000ms
+ * If the Player select the wrong answer the correct answer get highlighted with green and show the user the correct answer as well. 
+ *
  */
 
 function checkAnswer(selectedIndex) {
@@ -357,6 +357,13 @@ function showResult(){
       console.log("quiz finished...")
     }
   }
+
+  document.getElementById("replay-btn").addEventListener("click", () => {
+    resetState();
+    reset(score, incorrect);
+    startGame();
+    replayButton.style.display = "none";
+  });
   
   let questions = [
     {
