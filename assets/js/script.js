@@ -61,7 +61,6 @@ document.getElementById("player-form").addEventListener("click", function (e) {
 function checkPage() {
   if(document.title === "Quiz Homepage") {
     document.getElementById("quiz").classList.add("hide");
-    document.getElementById("replay-btn").classList.add("hide");
     document.getElementById("homepage").classList.remove("hide");
     startHome.addEventListener("click", function() {
       startGame();
@@ -81,6 +80,7 @@ checkPage();
 
 
 function nextCard(){
+  
     resetState();
 
     if ( incorrect >= 4) {
@@ -166,7 +166,6 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       incorrect = 0;
       document.getElementById("score").textContent = score;
       document.getElementById("incorrect").textContent = incorrect;
-      document.getElementById("replay-btn").classList.add("hide");
       document.querySelector(".score-area").classList.remove("hide");
       Start.style.visibility = "hidden"; //Hide start button after initialy clicked
       window.onload = function() {
@@ -311,7 +310,9 @@ function checkAnswer(selectedIndex) {
 
 function showResult(){
     questionCard.innerText = `Congratulations ${playerName} you finished the quiz and got ${score} questions correct!`;
+    quizFinished();
     resetState();
+
     /*reset(score, incorrect);*/
   }
 
@@ -350,8 +351,10 @@ function showResult(){
   });
 
   function quizFinished() {
+    console.log("Checking quiz finished condition...", currentQuestionIndex, selectedQuestions.length);
     if (currentQuestionIndex >= selectedQuestions.length) {
-      document.getElementById("replay-btn").classList.remove("hide");
+      replayButton.style.display = "block";
+      console.log("quiz finished...")
     }
   }
   
