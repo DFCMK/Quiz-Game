@@ -7,17 +7,29 @@ let answerButtons = document.getElementById("answer-btn");
 let results = document.getElementById("results");
 let score = 0;
 let incorrect = 0;
-let gameStarted = false;
 let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
 let title = document.getElementById("title");
 let Quit = document.getElementById("quit-btn");
-
+let startHome = document.getElementById("start-btn-home");
+let replayButton = document.getElementById("replay-btn");
 
 /*https://www.geeksforgeeks.org/how-to-create-a-modal-box-using-html-css-and-javascript*/
-let openBtn = document.getElementById("start-btn-home");;
-let modal = document.querySelector(".modal-overlay");
-/*let closeBtn = document.querySelector(".close-modal-btn");*/
+/*let modal = document.querySelector(".modal-overlay");
+let closeBtn = document.querySelector(".close-modal-btn");
+
+// Check if openBtn is not null before adding event listeners
+let openBtn = document.getElementById("start-btn-home");
+if (openBtn) {
+  openBtn.addEventListener("click", openModal);
+}
+
+let playerNameInput = document.getElementById("playerName");
+if (playerNameInput) {
+  playerNameInput.addEventListener("focus", function (e) {
+    e.stopPropagation();
+  });
+}
 
 function openModal() {
   modal.style.display = "block";
@@ -25,33 +37,47 @@ function openModal() {
 
 function closeModal() {
   modal.style.display = "none";
+  
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 }
 
 openBtn.addEventListener("click", openModal);
-modal.addEventListener("click", (e) => closeModal(e, true));
-/*closeBtn.addEventListener("click", closeModal);*/
+modal.addEventListener("click", closeModal);
+closeBtn.addEventListener("click", closeModal);
+
+document.getElementById("player-form").addEventListener("click", function (e) {
+  e.stopPropagation();
+  openModal();
+  startGame();
+});
+
+
 
 /*next.addEventListener("click", nextCard);*/
+
 
 function checkPage() {
   if(document.title === "Quiz Homepage") {
     document.getElementById("quiz").classList.add("hide");
+    document.getElementById("replay-btn").classList.add("hide");
     document.getElementById("homepage").classList.remove("hide");
-    openBtn.addEventListener("click", function() {
+    startHome.addEventListener("click", function() {
       startGame();
       document.getElementById("start-btn-home").style.display = "none";
       Start.style.display = "none";
-      /*document.getElementById("homepage").classList.add("hide");*/
+      document.getElementById("homepage").classList.add("hide");
       document.getElementById("quiz").classList.remove("hide");
       });
       Quit.addEventListener("click", function() {
-        openBtn.style.display = "visible";
+        startHome.style.display = "visible";
       })
     }
   }
-  
-
 checkPage();
+
+
 
 
 function nextCard(){
@@ -86,36 +112,45 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   let selectedQuestions;
   let playerName;
   let shuffleQuestions, currentQuestionIndex;
+  let gameStarted = false;
+  let gameSound = document.getElementById("audio");
+  let correctSound = document.getElementById("correct");
+  let wrongSound = document.getElementById("wrong");
+  let muteButton = document.getElementById("mute-btn");
+  let muteIcon = document.getElementById("mute-icon");
+  let unmuteIcon = document.getElementById("unmute-icon");
   
-function startGame(){
+  function startGame(){
 
-    openModal();
+    /*playerName = prompt("Please enter your name:");
 
-    document.getElementById('player-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      playerName = document.getElementById('playerName').value;
+    if (playerName != null && playerName != '') {*/
       
-      if (playerName != null && playerName != '' && /^[a-zA-Z]+[a-zA-Z0-9]*$/.test(playerName)) {
-
-      Start.classList.add("hide");
+      Start.style.display = "none";
+      /*gameStarted = true;*/
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-      selectedQuestions = shuffleQuestions.slice(0, 15);
+      selectedQuestions = shuffleQuestions.slice(0, 5);
       
       currentQuestionIndex = 0;
       questionBox.classList.remove("hide");
       document.getElementById("counter").style.display = "block"; // show the counter
       document.getElementById("progress-bar").style.visibility = "visible";
-      document.getElementById("mute-btn").style.display = "block";
+      muteButton.style.display = "block";
+     
+
+      gameSound.muted = true;
+      correctSound.muted = true;
+      wrongSound.muted = true;
+
+
 
     
     showQuestion(selectedQuestions[currentQuestionIndex]);
-    gameSound.play();
-    closeModal();
     }
-  });
-}
+  /*}/*
+
   
  
   
@@ -125,25 +160,25 @@ function startGame(){
    */
   
   Start.addEventListener("click", function() {
-    openModal();
-      startGame();
+    startGame();
       gameStarted = true;
       score = 0;
       incorrect = 0;
       document.getElementById("score").textContent = score;
       document.getElementById("incorrect").textContent = incorrect;
+      document.getElementById("replay-btn").classList.add("hide");
       document.querySelector(".score-area").classList.remove("hide");
       Start.style.visibility = "hidden"; //Hide start button after initialy clicked
+      window.onload = function() {
       document.getElementById("homepage").style.display = "none"; // Hide the homepage
-   
+      }
     // Redirect to game.html
-    window.location.href = "game.html"; // Change the URL to game.html
+   window.location.href = "game.html"; // Change the URL to game.html
     
     });
-    
-    Quit.addEventListener("click", quitButton);
-    
-    function quitButton() {
+  
+  Quit.addEventListener("click", quitButton);
+  function quitButton() {
     window.location.href = "index.html";
   }
        
@@ -151,23 +186,16 @@ function startGame(){
      /**
       * This section handle the mute button and mute gameSound and sound effects if clicked
       * */ 
-
-      let gameSound = document.getElementById("audio");
-      let correctSound = document.getElementById("correct");
-      let wrongSound = document.getElementById("wrong");
-      let isMuted = false; //Track the mute/unmute state
-      let muteButton = document.getElementById("mute-btn");
-      let muteIcon = document.getElementById("mute-icon");
-      let unmuteIcon = document.getElementById("unmute-icon");
-      
-      muteButton.addEventListener("click", function () {
-        isMuted = !isMuted;
-        updateMuteButton();
-
+     let isMuted = false;
+     
+     muteButton.addEventListener("click", function () {
+      isMuted = !isMuted;
+      updateMuteButton();
+        
         gameSound.muted = isMuted;
         wrongSound.muted = isMuted; 
         correctSound.muted = isMuted;
-      });
+        });
       
       //Update the mute/unmute button state based on isMuted
       function updateMuteButton() {
@@ -188,8 +216,6 @@ function startGame(){
      */
 
     function showQuestion(question) {
-
-      console.log("showQuestion called");
       
       questionCard.innerText = question.question;
       answerButtons.innerHTML = "";
@@ -323,6 +349,11 @@ function showResult(){
     startGame();
   });
 
+  function quizFinished() {
+    if (currentQuestionIndex >= selectedQuestions.length) {
+      document.getElementById("replay-btn").classList.remove("hide");
+    }
+  }
   
   let questions = [
     {
