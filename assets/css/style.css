@@ -1,3 +1,5 @@
+
+
 :root { /*Web Dev Simplified Tutorial*/
     --hue-neutral: 200;
 }
@@ -26,6 +28,7 @@ body {
     padding: 10px 5px;
     margin: 5px 0px;
     font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .btn-grid { /*Web Dev Simplified Tutorial*/
@@ -184,17 +187,16 @@ h2 {
     top: 40%;
     left: 50%; 
     transform: translate(-50%, -50%);
-    color: #DDE3fD;
+    color: #fff;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 1, 5, 1);   
 }
 
-#text-overlay h2 {
-    font-size: 2rem;
+#text-overlay h1 {
+    font-size: 2.5rem;
 }
-
 
 /*.modal-overlay {
     background: rgba(0, 0, 0, 0.7);
@@ -247,6 +249,17 @@ h2 {
     max-width: 210px;
     width: 100%;
 }*/
+
+#timer {
+    color: #fff;
+    float: right;
+    margin: -40px 40px;
+
+}
+
+#time-left {
+    color: red;
+}
 
 .hide {
     display: none;

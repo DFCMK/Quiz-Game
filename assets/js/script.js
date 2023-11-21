@@ -1,4 +1,3 @@
-
 let Start = document.getElementById("start-btn-quiz");
 /*let next = document.getElementById("next-btn");*/
 let questionBox =  document.getElementById("question-box");
