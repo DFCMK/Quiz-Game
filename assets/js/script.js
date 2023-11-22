@@ -41,7 +41,7 @@ function nextCard(){
   
     resetState();
 
-    if ( incorrect >= 4) {
+    if ( incorrect >= 3) {
       gameOver();
     }
      else if (currentQuestionIndex < selectedQuestions.length) {
@@ -289,8 +289,8 @@ function showResult(){
  */
 
   function gameOver() {
-    if(incorrect === 4) {
-        alert(`Game Over ${playerName}, you were three times wrong!`);
+    if(incorrect === 3) {
+        alert("Game Over, you were three times wrong!");
         resetState();
         reset(incorrect, score);
         replayMenu.style.display = "block"; //show replay menu
