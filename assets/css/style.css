@@ -158,7 +158,7 @@ h2 {
 #quit-btn {
     position: absolute;
     display: flex;
-    top: 25%;
+    top: 30%;
     left: 90%;
     justify-content: flex-end;
     align-items: end;
@@ -282,5 +282,11 @@ h2 {
 @media screen and (min-width: 992px) {
     #replay-menu {
         left: 22%;
+    }
+
+    #quit-btn {
+        top: 37%;
+        left: 96%;
+       
     }
 }
