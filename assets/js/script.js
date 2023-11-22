@@ -314,6 +314,7 @@ function showResult(){
   function quizFinished() {
     if (currentQuestionIndex >= selectedQuestions.length) {
       replayButton.style.display = "block";
+      Quit.style.display = "block";
     }
   }
 
