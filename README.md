@@ -102,9 +102,9 @@ The quiz website consists of a homepage with a brief introduction and a start bu
   
   The screenshots below illustrate these design elements on both a laptop and a smartphone for a comprehensive view.
 
-  ![Homepage on Laptop](./assets/images/homepage-laptop.png "Homepage on Laptops")
+  ![Questioncard on Laptop](./assets/images/questioncard-laptop.png "Questioncard Laptop")
 
-  ![Homepage on smartphone](./assets/images/homepage-smartphone.png "Homepage on smartphone")
+  ![Questioncard smartphone](./assets/images/questioncard-smartphone.png "Homepage on smartphone")
 
   #### Mute/unmute button: 
   - The mute/unmute button serves as a crucial element for sound control within the quiz. Users can easily toggle between muted and unmuted states, providing them with the flexibility to customize their audio experience. This feature ensures a seamless and adjustable sound environment, catering to individual preferences.
