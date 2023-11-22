@@ -154,17 +154,22 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   ![Results](./assets/images/results.png "Results")
 
+  ### Future Features:
+Potential future features include the addition of a submission form to personalize the game experience by getting players' names. Additionally, there could be a fireworks animation with sound effects in the results section, a countdown per question, the inclusion of jokers, an increased number of questions, the implementation of different difficulty levels, and a timer to measure the overall game duration.
+
 
 
 ## Technologies Used
 
-- [HTML5](#html5): provides some of the content and structure for the website
+- <a href="https://html.spec.whatwg.org/" rel="nofollow">HTML5</a>: Provides the content and structure for the website.
 
-- [CSS](#css): provide the styling
+- <a href="https://www.w3.org/Style/CSS/Overview.en.html" rel="nofollow">CSS</a>: Provides the styles for the website.
 
-- [JavaScript](#javascript): Provides content and add interactivity to game.
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript: Provides content and add interactivity to game." rel="nofollow">JavaScript</a>: Provides the interactivity and dynamic behavior for the website.
 
-- [VS Code](vs-code): used to deploy the website.
+- <a href="https://github.com/" rel="nofollow">Github</a>:  Used to host and manage the website's source code.
+
+- <a href="https://code.visualstudio.com/ used to deploy the website." rel="nofollow">VS Code</a>: Used as the code editor to write and edit the website's code.
 
 ## Testing
 
@@ -183,11 +188,11 @@ This site was depolyed to GitHub pages. The steps to deploy a site are shown bel
 4. at the <b>Branch</b> item underneth the <b>source</b> item, set the branch to main and save it.
 
 5. Once you have selected the main branch, the page will automatically refresh to show a detailed ribbon display indicating that the deployment was successful. If the page does not refresh automatically, refresh it manually.
-<!--
-![Screenshoot from Github deployment](./assets/images/guthub-deployment.png "GitHub depoloyment")
 
-To get to the live link of the GitHub repository - click here: <a href="https://github.com/DFCMK/Budapest">https://github.com/DFCMK/Budapest</a>
--->
+![Screenshoot from Github deployment](./assets/images/deploy-quiz.png "GitHub depoloyment")
+
+To get to the live link of the GitHub repository - click here: <a href="https://dfcmk.github.io/Quiz-Game/">https://dfcmk.github.io/Quiz-Game/</a>
+
 
 
 ### To Fork the repository on GitHub:
@@ -202,16 +207,16 @@ To fork a repository:
 4. Click the Fork button to create the copy.
 
 Once you have forked a repository, you can clone it to your local computer and start making changes. When you are ready to share your changes, you can create a pull request to the original repository.
-<!--
-![Screenshoot from Github deployment](./assets/images/forking.png "GitHub depoloyment")
--->
+
+![Screenshoot from Github deployment](./assets/images/fork-quiz.png "GitHub depoloyment")
+
 #### To create a local clone of this project:
 
 1. Click the Code tab under the repository's name.
 2. Click the clipboard icon in the Clone with HTTPS section to copy the URL.
-<!--
-![Screenshoot from Github deployment](./assets/images/git-clone.png "GitHub depoloyment")
--->
+
+![Screenshoot from Github deployment](./assets/images/fork2.png "GitHub depoloyment")
+
 Once you have copied the URL, you can use a Git client to clone the repository to your local computer.
 Here are the steps to clone a repository using Git Bash:
 
@@ -231,8 +236,15 @@ You also can create and name the directory where the clone should be saved in, w
 
   ### Content:
 
-     
+   - The icons are sourced from <a href="https://fontawesome.com/search?q=swi&o=r&m=free">Font Awesome</a>
+   - The background image on the homepage is obtained from <a href="https://pixabay.com/illustrations/question-mark-why-question-5475172/"> pixaby</a>
+   - The quiz is based on <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a> tutorial video. 
+   - Audio elements were implemented using <a href="https://www.learningguild.com/articles/coding-sound-with-javascript-beginner-s-guide/">Mark Lassoff article</a> as a guideline and where downloaded from <a href="https://pixabay.com/sound-effects/search/quiz/">pixaby</a>
 
+   - The score area is inspired by the <a href="https://github.com/DFCMK/Love-Maths/blob/main/index.html">Love Math project</a>
+
+   - The progress bar was built with the <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
+   
    ### Media:
 
 
