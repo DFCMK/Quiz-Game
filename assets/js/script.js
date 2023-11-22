@@ -319,7 +319,7 @@ function showResult(){
     startGame();
     replayButton.style.display = "none";
   });
-  
+  //many of these questions where found at: https://test.sanfoundry.com/javascript-tests/
   let questions = [
     {
     question: "What is JavaScript primarily used for?",
