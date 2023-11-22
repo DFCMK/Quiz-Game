@@ -25,7 +25,7 @@ Are you ready for the challenge? <a href="https://dfcmk.github.io/Quiz-Game/">Ja
     - [Questioncard counter and progressbar](#questioncard-counter-and-progressbar)
     - [Score area](#score-area)
     - [Gamesound](#game-sound)
-    - [Game over and Replay menu](#game-over-and replay-menu)
+    - [Game over and Replay menu](#game-over-and-replay-menu)
     - [Results](#results)
 
   - <a href="#features">Future Features</a>
