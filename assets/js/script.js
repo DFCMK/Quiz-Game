@@ -13,47 +13,6 @@ let Quit = document.getElementById("quit-btn");
 let startHome = document.getElementById("start-btn-home");
 let replayButton = document.getElementById("replay-btn");
 
-/*https://www.geeksforgeeks.org/how-to-create-a-modal-box-using-html-css-and-javascript*/
-/*let modal = document.querySelector(".modal-overlay");
-let closeBtn = document.querySelector(".close-modal-btn");
-
-// Check if openBtn is not null before adding event listeners
-let openBtn = document.getElementById("start-btn-home");
-if (openBtn) {
-  openBtn.addEventListener("click", openModal);
-}
-
-let playerNameInput = document.getElementById("playerName");
-if (playerNameInput) {
-  playerNameInput.addEventListener("focus", function (e) {
-    e.stopPropagation();
-  });
-}
-
-function openModal() {
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  modal.style.display = "none";
-  
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-}
-
-openBtn.addEventListener("click", openModal);
-modal.addEventListener("click", closeModal);
-closeBtn.addEventListener("click", closeModal);
-
-document.getElementById("player-form").addEventListener("click", function (e) {
-  e.stopPropagation();
-  openModal();
-  startGame();
-});
-
-
-
 /*next.addEventListener("click", nextCard);*/
 
 
@@ -91,8 +50,8 @@ function nextCard(){
     else
     {
       showResult();
+    }
   }
-}
 
 /**
  * This function is responisble for displaying the progressbar
@@ -126,7 +85,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
     if (playerName != null && playerName != '') {*/
       
       Start.style.display = "none";
-      /*gameStarted = true;*/
+      gameStarted = true;
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
@@ -142,17 +101,10 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       gameSound.muted = true;
       correctSound.muted = true;
       wrongSound.muted = true;
-
-
-
-    
-    showQuestion(selectedQuestions[currentQuestionIndex]);
+      
+      showQuestion(selectedQuestions[currentQuestionIndex]);
     }
-  /*}/*
-
-  
- 
-  
+    
   /**
    * This function will listen to clicking the start button. 
    * When a player clicks the button the question Cards with all theire elements get displayed.
@@ -184,7 +136,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
      /**
       * This section handle the mute button and mute gameSound and sound effects if clicked
       * */ 
-     let isMuted = false;
+     let isMuted = true;
      
      muteButton.addEventListener("click", function () {
       isMuted = !isMuted;
@@ -193,7 +145,12 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
         gameSound.muted = isMuted;
         wrongSound.muted = isMuted; 
         correctSound.muted = isMuted;
-        });
+      
+        // If game sound is not muted and the game has started, play the game sound
+        if(!isMuted && gameStarted) {
+          gameSound.play();
+        }
+      });
       
       //Update the mute/unmute button state based on isMuted
       function updateMuteButton() {
@@ -207,6 +164,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
           unmuteIcon.style.display = "inline";
         }
       }
+
       
      /**
      * 
