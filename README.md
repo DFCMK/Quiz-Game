@@ -18,9 +18,11 @@ Are you ready for the challenge? <a href="https://dfcmk.github.io/Quiz-Game/">Ja
   - [Color Scheme](#color-scheme)
 
 - <a href="#features">Features</a>
-  - <a href="#features">Existing Features</a>
+  - <a href="#existing-features">Existing Features:</a>
     - [Home page](#home-page)
     - [Question cards](#question-cards)
+    - [Mute/unmute button](#mute/unmute-button)
+    - [Questioncard-counter](#questioncard-counter)
     - [Score area](#score-area)
     - [Gamesound](#game-sound)
     - [Game over](#game-over)
@@ -69,16 +71,48 @@ The JavaScript Quiz is designed to test and engage users with 15 JavaScript-rela
 
 No custom fonts were imported for the quiz as it did not appear necessary. The site utilizes default fonts, which were deemed sufficient for the design.
 
+### Color Scheme:
+
+The selected color scheme for the quiz features a blue background with an hsl(--hue) hue, complemented by white question boxes and answer buttons in the same color. This choice was made to maintain focus on the quiz content. The combination of white question boxes and blue buttons enhances the visual harmony with the background while capturing the user's attention effectively.
+
+For a visual representation of the contrast, refer to the screenshot below:
+ 
+
+![Picture about colorscheme](./assets/images/color-scheme.png "color-scheme")
+
+
 ## Features:
 
 The quiz website consists of a homepage with a brief introduction and a start button to initiate the quiz. The main quiz section includes 15 multiple-choice questions, each displaying a question and four possible answers. The game provides immediate feedback by highlighting correct answers in green and incorrect ones in red. At the end of the quiz, the user receives a summary of correct and incorrect answers, along with a congratulatory message. If the user answers incorrectly three times, the quiz ends, and they have the option to retry or return to the homepage. The site also features a mute button for audio control and includes a replay option.
 
 ### Existing Features:
   #### Home page:
-  - Bla Bal Bla
+  - The homepage comprises the game title, a concise introduction to the game and its rules, a start button for initiating the quiz, and a background image designed to pique curiosity about the quiz. 
+  
+  The screenshots below provide examples of how the homepage would appear on both a laptop and a smartphone.
+
+  ![Homepage on Laptop](./assets/images/homepage-laptop.png "Homepage on Laptops")
+
+  ![Homepage on smartphone](./assets/images/homepage-smartphone.png "Homepage on smartphone")
+
 
   #### Question cards: 
-  - Bla Bla
+  
+  - The question cards feature a clear and user-friendly design. Each card includes a well-formulated question, accompanied by four multiple-choice answers. The chosen color scheme ensures a visually cohesive experience, with white question boxes and hsl(--hue) blue answer buttons, blending seamlessly with the background.
+  
+  The screenshots below illustrate these design elements on both a laptop and a smartphone for a comprehensive view.
+
+  ![Homepage on Laptop](./assets/images/homepage-laptop.png "Homepage on Laptops")
+
+  ![Homepage on smartphone](./assets/images/homepage-smartphone.png "Homepage on smartphone")
+
+  #### Mute/unmute button: 
+  - The mute/unmute button serves as a crucial element for sound control within the quiz. Users can easily toggle between muted and unmuted states, providing them with the flexibility to customize their audio experience. This feature ensures a seamless and adjustable sound environment, catering to individual preferences.
+  
+  The game sound is muted by default to enhance the user experience, as illustrated below:
+
+
+      ![Mute/unmute button](./assets/images/mute&unmute-button.png "Mute/unmute button")
 
   #### Score area: 
   - Bla Bal Bal
