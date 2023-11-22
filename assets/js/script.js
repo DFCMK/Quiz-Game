@@ -89,7 +89,7 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
       
       //Shuffle questions and select 15 questions
       shuffleQuestions = questions.sort(() => Math.random() - 0.5);
-      selectedQuestions = shuffleQuestions.slice(0, 5);
+      selectedQuestions = shuffleQuestions.slice(0, 15);
       
       currentQuestionIndex = 0;
       questionBox.classList.remove("hide");
