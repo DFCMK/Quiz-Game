@@ -8,6 +8,7 @@ let score = 0;
 let incorrect = 0;
 let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
+let replayQuit = document.getElementById("replay-quit-btn");
 let title = document.getElementById("title");
 let Quit = document.getElementById("quit-btn");
 let startHome = document.getElementById("start-btn-home");
@@ -297,6 +298,7 @@ function showResult(){
         title.classList.add("hide");
         gameSound.pause();
         questionBox.classList.add("hide");//hide question cards
+        Quit.style.display = "none";
     }
     // Hide mute button again
     document.getElementById("mute-btn").style.display = "none";
@@ -307,6 +309,8 @@ function showResult(){
     startGame();
   });
 
+  replayQuit.addEventListener("click", quitButton);
+    
   function quizFinished() {
     if (currentQuestionIndex >= selectedQuestions.length) {
       replayButton.style.display = "block";
@@ -319,6 +323,7 @@ function showResult(){
     startGame();
     replayButton.style.display = "none";
   });
+
   //many of these questions where found at: https://test.sanfoundry.com/javascript-tests/
   let questions = [
     {
