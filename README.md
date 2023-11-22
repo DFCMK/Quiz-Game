@@ -22,12 +22,11 @@ Are you ready for the challenge? <a href="https://dfcmk.github.io/Quiz-Game/">Ja
     - [Home page](#home-page)
     - [Question cards](#question-cards)
     - [Mute/unmute button](#mute/unmute-button)
-    - [Questioncard-counter](#questioncard-counter)
+    - [Questioncard counter and progressbar](#questioncard-counter-and-progressbar)
     - [Score area](#score-area)
     - [Gamesound](#game-sound)
-    - [Game over](#game-over)
-    - [Replay menu](#historical-places)
-    - [Results](#fun-places)
+    - [Game over and Replay menu](#game-over-and replay-menu)
+    - [Results](#results)
 
   - <a href="#features">Future Features</a>
     - [Name submission form](#name-submission-form)
@@ -87,7 +86,7 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
 ### Existing Features:
   #### Home page:
-  - The homepage comprises the game title, a concise introduction to the game and its rules, a start button for initiating the quiz, and a background image designed to pique curiosity about the quiz. 
+  The homepage comprises the game title, a concise introduction to the game and its rules, a start button for initiating the quiz, and a background image designed to pique curiosity about the quiz. 
   
   The screenshots below provide examples of how the homepage would appear on both a laptop and a smartphone.
 
@@ -98,7 +97,7 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   #### Question cards: 
   
-  - The question cards feature a clear and user-friendly design. Each card includes a well-formulated question, accompanied by four multiple-choice answers. The chosen color scheme ensures a visually cohesive experience, with white question boxes and hsl(--hue) blue answer buttons, blending seamlessly with the background.
+  The question cards feature a clear and user-friendly design. Each card includes a well-formulated question, accompanied by four multiple-choice answers. The chosen color scheme ensures a visually cohesive experience, with white question boxes and hsl(--hue) blue answer buttons, blending seamlessly with the background.
   
   The screenshots below illustrate these design elements on both a laptop and a smartphone for a comprehensive view.
 
@@ -107,27 +106,53 @@ The quiz website consists of a homepage with a brief introduction and a start bu
   ![Questioncard smartphone](./assets/images/questioncard-smartphone.png "Homepage on smartphone")
 
   #### Mute/unmute button: 
-  - The mute/unmute button serves as a crucial element for sound control within the quiz. Users can easily toggle between muted and unmuted states, providing them with the flexibility to customize their audio experience. This feature ensures a seamless and adjustable sound environment, catering to individual preferences.
+  The mute/unmute button serves as a crucial element for sound control within the quiz. Users can easily toggle between muted and unmuted states, providing them with the flexibility to customize their audio experience. This feature ensures a seamless and adjustable sound environment, catering to individual preferences.
   
   The game sound is muted by default to enhance the user experience, as illustrated below:
 
 
-      ![Mute/unmute button](./assets/images/mute&unmute-button.png "Mute/unmute button")
+  ![Mute/unmute button](./assets/images/mute&unmute-button.png "Mute/unmute button")
+
+  #### Questioncard counter and progressbar:
+  The question card counter and progressbar keeps track of the answered questions, providing users with a visual representation of their progress and indicating how many questions remain. 
+  The screenshot below illustrates the counter:
+
+  ![Counter and progressbar](./assets/images/counter&progressbar.png "Counter and progressbar")
+
+
 
   #### Score area: 
-  - Bla Bal Bal
+  The score area tallies both correct and incorrect answers, distinguishing them with green and red colors, respectively. This visual representation helps users monitor their performance throughout the quiz.
+
+  ![Score area](./assets/images/score.png "Score area")
 
   #### Gamesound: 
-  - fnkasjfkjas
+  The game sound is carefully selected to evoke a classical quiz ambiance. Click on the icon below to experience it. Additionally, the correct and wrong sounds have been chosen to resemble typical quiz feedback, enhancing the overall quiz experience.
+
+  - Gamesound:
+ 
+
+  - Wrong answer sound: 
+
+
+  - Correct answer sound: 
   
-  #### Game over:
-  - fkafasjklf 
 
-  #### Replay menu: 
-  - jkdbasjkf
+  
+  #### Game over and Replay menu:
+  When player answered three times incorrectly an alert message plop up to inform the player the he lost the game, see below: 
 
+  ![Game over message](./assets/images/gameover-msg.png "Game over message")
+
+
+  followed by a replay menu where the Player can play again or quit:
+
+  ![Replay menu](./assets/images/replay-menu.png "Replay menu")
+  
   #### Results:
-  - dkasnfklajsnf
+  Upon completing the quiz, the result section appears, displaying the player's score along with a brief congratulatory message and a replay button:
+
+  ![Results](./assets/images/results.png "Results")
 
 
 
