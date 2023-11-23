@@ -246,6 +246,17 @@ You also can create and name the directory where the clone should be saved in, w
    - The progress bar was built with the <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
    
    ### Media:
+   - The audio files for Gamesound, Wrongsound, and Correctsound were obtained from <a href="https://pixabay.com/sound-effects/search/quiz/">pixaby</a>
+   
+   - The background image on the homepage also came from  <a href="https://pixabay.com/illustrations/question-mark-why-question-5475172/"> pixaby</a>
+
+   ### Code: 
+   - <a href="https://html.spec.whatwg.org/">HTML5</a>:
+     - code from line20-32 based on this article: <a href="https://www.learningguild.com/articles/coding-sound-with-javascript-beginner-s-guide/">Mark Lassoff article</a>
+
+     - The Quiz section is based on: <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a>(line:19 & Line:34-36 & Line:40-57)
+
+     - The Progressbar is based on: <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a> (Line:37-39)
 
 
 
