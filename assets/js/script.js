@@ -1,4 +1,4 @@
-let Start = document.getElementById("start-btn-quiz");
+const Start = document.getElementById("start-btn-quiz");
 /*let next = document.getElementById("next-btn");*/
 let questionBox =  document.getElementById("question-box");
 let questionCard = document.getElementById("question");
@@ -10,9 +10,20 @@ let replayMenu = document.getElementById("replay-menu");
 let PlayAgain = document.getElementById("play-again-btn");
 let replayQuit = document.getElementById("replay-quit-btn");
 let title = document.getElementById("title");
-let Quit = document.getElementById("quit-btn");
-let startHome = document.getElementById("start-btn-home");
+const Quit = document.getElementById("quit-btn");
+const startHome = document.getElementById("start-btn-home");
 let replayButton = document.getElementById("replay-btn");
+let selectedQuestions;
+let playerName;
+let shuffleQuestions, currentQuestionIndex;
+let gameStarted = false;
+let gameSound = document.getElementById("audio");
+let correctSound = document.getElementById("correct");
+let wrongSound = document.getElementById("wrong");
+let muteButton = document.getElementById("mute-btn");
+let muteIcon = document.getElementById("mute-icon");
+let unmuteIcon = document.getElementById("unmute-icon");
+
 
 /*next.addEventListener("click", nextCard);*/
 
@@ -68,16 +79,16 @@ function progressBar(currentQuestionIndex, totalQuestions) {// This function is 
   /**
    * This function will start the quiz, and show 15 Questions out of a pool of 40 questions in randomised order.
    */
-  let selectedQuestions;
+  /*let selectedQuestions;
   let playerName;
   let shuffleQuestions, currentQuestionIndex;
   let gameStarted = false;
-  let gameSound = document.getElementById("audio");
-  let correctSound = document.getElementById("correct");
-  let wrongSound = document.getElementById("wrong");
-  let muteButton = document.getElementById("mute-btn");
+  const gameSound = document.getElementById("audio");
+  const correctSound = document.getElementById("correct");
+  const wrongSound = document.getElementById("wrong");
+  const muteButton = document.getElementById("mute-btn");
   let muteIcon = document.getElementById("mute-icon");
-  let unmuteIcon = document.getElementById("unmute-icon");
+  let unmuteIcon = document.getElementById("unmute-icon");*/
   
   function startGame(){
 
@@ -307,6 +318,7 @@ function showResult(){
   document.getElementById("play-again-btn").addEventListener("click", () => {
     replayMenu.style.display = "none";
     startGame();
+    Quit.style.display = "block";
   });
 
   replayQuit.addEventListener("click", quitButton);
@@ -326,7 +338,7 @@ function showResult(){
   });
 
   //many of these questions where found at: https://test.sanfoundry.com/javascript-tests/
-  let questions = [
+  const questions = [
     {
     question: "What is JavaScript primarily used for?",
     answers: [
