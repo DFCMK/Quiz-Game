@@ -29,13 +29,7 @@ Are you ready for the challenge? <a href="https://dfcmk.github.io/Quiz-Game/">Ja
     - [Results](#results)
 
   - <a href="#features">Future Features</a>
-    - [Name submission form](#name-submission-form)
-    - [Levels](#levels)
-    - [Jokers](#jokers)
-    - [firework animation](#firework-animation)
-    - [Timer](#timer)
-    - [Countdown](#countdown)
-
+   
 - <a href="#technologies-used">Technologies Used</a>
 
 - [Testing](#testing)
@@ -62,6 +56,8 @@ Are you ready for the challenge? <a href="https://dfcmk.github.io/Quiz-Game/">Ja
 
 The JavaScript Quiz is designed to test and engage users with 15 JavaScript-related questions. It features a homepage with an introduction and a start button, multiple-choice question cards, and results displayed at the end. The game promotes learning by highlighting correct and incorrect answers.
 
+<a href="#table-of-content">Back to top</a>
+
 
 <a class="heading-link" href="#design-choices"></a>
 ## Design Choices
@@ -79,10 +75,14 @@ For a visual representation of the contrast, refer to the screenshot below:
 
 ![Picture about colorscheme](./assets/images/color-scheme.png "color-scheme")
 
+<a href="#table-of-content">Back to top</a>
+
 
 ## Features:
 
 The quiz website consists of a homepage with a brief introduction and a start button to initiate the quiz. The main quiz section includes 15 multiple-choice questions, each displaying a question and four possible answers. The game provides immediate feedback by highlighting correct answers in green and incorrect ones in red. At the end of the quiz, the user receives a summary of correct and incorrect answers, along with a congratulatory message. If the user answers incorrectly three times, the quiz ends, and they have the option to retry or return to the homepage. The site also features a mute button for audio control and includes a replay option.
+
+<a href="#table-of-content">Back to top</a>
 
 ### Existing Features:
   #### Home page:
@@ -94,8 +94,9 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   ![Homepage on smartphone](./assets/images/homepage-smartphone.png "Homepage on smartphone")
 
+  <a href="#table-of-content">Back to top</a>
 
-  #### Question cards: 
+#### Question cards: 
   
   The question cards feature a clear and user-friendly design. Each card includes a well-formulated question, accompanied by four multiple-choice answers. The chosen color scheme ensures a visually cohesive experience, with white question boxes and hsl(--hue) blue answer buttons, blending seamlessly with the background.
   
@@ -105,6 +106,8 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   ![Questioncard smartphone](./assets/images/questioncard-smartphone.png "Homepage on smartphone")
 
+  <a href="#table-of-content">Back to top</a>
+
   #### Mute/unmute button: 
   The mute/unmute button serves as a crucial element for sound control within the quiz. Users can easily toggle between muted and unmuted states, providing them with the flexibility to customize their audio experience. This feature ensures a seamless and adjustable sound environment, catering to individual preferences.
   
@@ -112,6 +115,8 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
 
   ![Mute/unmute button](./assets/images/mute&unmute-button.png "Mute/unmute button")
+
+  <a href="#table-of-content">Back to top</a>
 
   #### Questioncard counter and progressbar:
   The question card counter and progressbar keeps track of the answered questions, providing users with a visual representation of their progress and indicating how many questions remain. 
@@ -126,6 +131,8 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   ![Score area](./assets/images/score.png "Score area")
 
+  <a href="#table-of-content">Back to top</a>
+
   #### Gamesound: 
   The game sound is carefully selected to evoke a classical quiz ambiance. Click on the icon below to experience it. Additionally, the correct and wrong sounds have been chosen to resemble typical quiz feedback, enhancing the overall quiz experience.
 
@@ -137,7 +144,7 @@ The quiz website consists of a homepage with a brief introduction and a start bu
 
   - Correct answer sound: 
   
-
+<a href="#table-of-content">Back to top</a>
   
   #### Game over and Replay menu:
   When player answered three times incorrectly an alert message plop up to inform the player the he lost the game, see below: 
@@ -148,6 +155,8 @@ The quiz website consists of a homepage with a brief introduction and a start bu
   followed by a replay menu where the Player can play again or quit:
 
   ![Replay menu](./assets/images/replay-menu.png "Replay menu")
+
+  <a href="#table-of-content">Back to top</a>
   
   #### Results:
   Upon completing the quiz, the result section appears, displaying the player's score along with a brief congratulatory message and a replay button:
@@ -157,7 +166,7 @@ The quiz website consists of a homepage with a brief introduction and a start bu
   ### Future Features:
 Potential future features include the addition of a submission form to personalize the game experience by getting players' names. Additionally, there could be a fireworks animation with sound effects in the results section, a countdown per question, the inclusion of jokers, an increased number of questions, the implementation of different difficulty levels, and a timer to measure the overall game duration.
 
-
+<a href="#table-of-content">Back to top</a>
 
 ## Technologies Used
 
@@ -171,9 +180,11 @@ Potential future features include the addition of a submission form to personali
 
 - <a href="https://code.visualstudio.com/ used to deploy the website." rel="nofollow">VS Code</a>: Used as the code editor to write and edit the website's code.
 
+<a href="#table-of-content">Back to top</a>
+
 ## Testing
 
-Please refer to <a href="coming.soon"><em>here<em></a> for more information on testing the JavaScript quiz.
+Please refer to <a href="https://github.com/DFCMK/Quiz-Game/blob/main/TESTING.md"><em>here<em></a> for more information on testing the JavaScript quiz.
 
 ## Deployment 
 
@@ -191,8 +202,9 @@ This site was depolyed to GitHub pages. The steps to deploy a site are shown bel
 
 ![Screenshoot from Github deployment](./assets/images/deploy-quiz.png "GitHub depoloyment")
 
-To get to the live link of the GitHub repository - click here: <a href="https://dfcmk.github.io/Quiz-Game/">https://dfcmk.github.io/Quiz-Game/</a>
+<a href="#table-of-content">Back to top</a>
 
+To get to the live link of the GitHub repository - click here: <a href="https://dfcmk.github.io/Quiz-Game/">https://dfcmk.github.io/Quiz-Game/</a>
 
 
 ### To Fork the repository on GitHub:
@@ -209,6 +221,8 @@ To fork a repository:
 Once you have forked a repository, you can clone it to your local computer and start making changes. When you are ready to share your changes, you can create a pull request to the original repository.
 
 ![Screenshoot from Github deployment](./assets/images/fork-quiz.png "GitHub depoloyment")
+
+<a href="#table-of-content">Back to top</a>
 
 #### To create a local clone of this project:
 
@@ -232,6 +246,8 @@ This will create a local clone of the repository in the current directory.
 
 You also can create and name the directory where the clone should be saved in, with adding the directory name after the <URL>. So the full command would look like this: git clone <URl> XXXX(This is a directory name)
 
+<a href="#table-of-content">Back to top</a>
+
 ## Credits
 
   ### Content:
@@ -244,27 +260,65 @@ You also can create and name the directory where the clone should be saved in, w
    - The score area is inspired by the <a href="https://github.com/DFCMK/Love-Maths/blob/main/index.html">Love Math project</a>
 
    - The progress bar was built with the <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
+
+   <a href="#table-of-content">Back to top</a>
    
    ### Media:
    - The audio files for Gamesound, Wrongsound, and Correctsound were obtained from <a href="https://pixabay.com/sound-effects/search/quiz/">pixaby</a>
    
    - The background image on the homepage also came from  <a href="https://pixabay.com/illustrations/question-mark-why-question-5475172/"> pixaby</a>
 
+   <a href="#table-of-content">Back to top</a>
+
    ### Code: 
-   - <a href="https://html.spec.whatwg.org/">HTML5</a>:
-     - code from line20-32 based on this article: <a href="https://www.learningguild.com/articles/coding-sound-with-javascript-beginner-s-guide/">Mark Lassoff article</a>
+   - <a href="https://github.com/DFCMK/Quiz-Game/blob/main/game.html">HTML5</a>:
+     - Code for <strong>audio</strong> elements from line 20-32 is based on: <a href="https://www.learningguild.com/articles/coding-sound-with-javascript-beginner-s-guide/">Mark Lassoff's article</a>
 
-     - The Quiz section is based on: <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a>(line:19 & Line:34-36 & Line:40-57)
+     - The <strong>Quiz</strong> section (line:19 & Line:34-36 & Line:40-57) is inspired by: <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a>
 
-     - The Progressbar is based on: <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a> (Line:37-39)
-
-
-
-   ## Acknowledgements:
+     Github repository: <a href="https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/index.html">https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/index.html</a>
 
 
+     - The <strong>Progressbar</strong> (Line:37-39) is based on: <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
+
+     - The <strong>score area</strong> (line 45-49) is inspired by the  <a href="https://github.com/DFCMK/Love-Maths/blob/main/index.html">Love Math project</a>
+
+  - <a href="https://github.com/DFCMK/Quiz-Game/blob/main/assets/css/style.css">CSS</a>:
+    - The CSS rules for: <strong>:root, body, question-box, question, btn-grid, btn, btn:hover, start-btn-quiz, start-btn-home</strong> are inspired by: <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a>
+
+    Github repository: <a href="https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/styles.css">https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/styles.css</a>
+
+
+    - The CSS rules for: <strong>score-area, score, incorrect</strong> are inspired by the: <a href="https://github.com/DFCMK/Love-Maths/blob/main/index.html">Love Math project</a>
+
+    - The CSS rules for: <strong>progress-bar</strong> and mybar are inspired by: <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
+    
+    NOTE: The media queries used cover every device width in landscape and portrait because I couldn't get the @media (orientation: landscape) to work for this project without overriding other CSS rules. It is not the best solution, but it solves the problem with landscape mode on mobile devices and tablets.
+
+- <a href="https://github.com/DFCMK/Quiz-Game/blob/main/assets/js/script.js">JavaScript</a>:
+  - Function <strong>progressBar</strong> is inspired by: <a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">w3schools tutorial</a>
+
+  - The functions: <strong>nextCard, startGame, Start.addEventListener("click", function() {}), showQuestion,resetState, checkAnswer, question pool(questions)</strong> was inspiered by: <a href="https://www.youtube.com/watch?v=riDzcEQbX6k">Web Dev Simplified</a>
+
+  Github repository: <a href="https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/script.js">https://github.com/WebDevSimplified/JavaScript-Quiz-App/blob/master/script.js</a>
+
+  - The function <strong>updateMuteButton</strong> was inspiered by  <a href="https://www.learningguild.com/articles/coding-sound-with-javascript-beginner-s-guide/">Mark Lassoff's article</a>
+
+  <a href="#table-of-content">Back to top</a>
+  
+## Acknowledgements:
+
+I extend my thanks to several individuals and communities who contributed to the completion of this project:
+
+- <a href="https://www.linkedin.com/in/precious-ijege-908a00168/">Precious Ijege</a>, my dedicated mentor, for providing valuable guidance and support throughout the development process.
+
+- The entire Code Institute team, whose resources and expertise have been instrumental in my learning journey.
+
+I choose to build a Quiz about JavaScript because i am new to this programming language and i thought it would be beneficial to incude the topic into the quiz so it would promote my learning.
 
 Denes Kalnoky 2023.
+
+<a href="#table-of-content">Back to top</a>
    
 
 
